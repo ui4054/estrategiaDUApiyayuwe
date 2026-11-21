@@ -1,0 +1,97 @@
+{
+  "telemetry": [
+    {
+      "subtask": "simuladores_js",
+      "model_used": "gemini-2.5-flash",
+      "role": "PRIMARY",
+      "prompt_tokens": 80,
+      "output_tokens": 21,
+      "total_tokens": 676,
+      "latency_s": 4.04,
+      "status": "HTTP_200_OK"
+    },
+    {
+      "subtask": "css_intercultural_svg",
+      "model_used": "gemini-2.5-flash-lite",
+      "role": "FAILOVER_TRIGGERED",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "latency_s": 2.67,
+      "status": "HTTP_503"
+    },
+    {
+      "subtask": "css_intercultural_svg",
+      "model_used": "gemini-2.5-flash",
+      "role": "PRIMARY",
+      "prompt_tokens": 47,
+      "output_tokens": 23,
+      "total_tokens": 643,
+      "latency_s": 3.48,
+      "status": "HTTP_200_OK"
+    },
+    {
+      "subtask": "maquetacion_html_modulos",
+      "model_used": "gemma-4-26b-a4b-it",
+      "role": "SECONDARY_FALLBACK",
+      "prompt_tokens": 48,
+      "output_tokens": 0,
+      "total_tokens": 646,
+      "latency_s": 13.32,
+      "status": "HTTP_200_OK"
+    },
+    {
+      "subtask": "guias_pdf_narrativa",
+      "model_used": "gemma-4-26b-a4b-it",
+      "role": "PRIMARY",
+      "prompt_tokens": 56,
+      "output_tokens": 0,
+      "total_tokens": 654,
+      "latency_s": 13.66,
+      "status": "HTTP_200_OK"
+    },
+    {
+      "subtask": "auditoria_calidad",
+      "model_used": "gemini-2.5-flash-lite",
+      "role": "FAILOVER_TRIGGERED",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "latency_s": 1.55,
+      "status": "HTTP_503"
+    },
+    {
+      "subtask": "auditoria_calidad",
+      "model_used": "gemma-4-26b-a4b-it",
+      "role": "FAILOVER_TRIGGERED",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "latency_s": 0.43,
+      "status": "HTTP_500"
+    }
+  ],
+  "outputs": {
+    "simuladores_js": {
+      "model": "gemini-2.5-flash",
+      "tokens": 676,
+      "content": "Okay, ¡aquí tienes la explicación en 4 viñetas técnicas, pensada para 4"
+    },
+    "css_intercultural_svg": {
+      "model": "gemini-2.5-flash",
+      "tokens": 643,
+      "content": "En una interfaz educativa DUA, la simbología cromática del Rojo Chumbe Nasa, el Oro Ubuntu afroc"
+    },
+    "maquetacion_html_modulos": {
+      "model": "gemma-4-26b-a4b-it",
+      "tokens": 646,
+      "content": "*   Topic: Pedagogical capsule (1 paragraph).\n    *   Language: Spanish.\n    *   Content: Articulate the 3 principles of UDL (Universal Design for Learning) with the 4 roles of the \"Tonga escolar\" (School Tonga/Tonga School).\n    *   UDL Principles: Engagement (Compromiso), Representation (Representación), Action & Expression (Acción y Expresión).\n    *   Tonga Roles: This is a specific pedagogical framework (likely from a specific educational context/author, often associated with collaborative learning or specific school management models in certain Latin American contexts).\n    *   *Self-Correction/Verification on \"Tonga escolar\":* In some educational contexts (specifically related to certain cooperative learning models or specific school management methodologies), the \"Tonga\" refers to a group of roles. I need to ensure I address these roles correctly.\n    *   *Wait, let's re-verify \"Tonga escolar\":* Actually, \"Tonga\" is often used in specific cooperative learning structures or classroom management models. If the user is referring to a specific model where \"Tonga\" refers to roles like *Líder, Secretario, Controlador de tiempo, etc.*, I must integrate them.\n    *   *Wait, looking closer at the term \"Tonga\":* In some pedagogical literature (often in specific regions), \"Tonga\" refers to a collaborative group structure. The 4 roles are typically: **Líder (Leader), Secretario (Secretary), Controlador de tiempo (Timekeeper), and Portavoz (Spokesperson/Reporter).**\n\n    *   *Engagement (Compromiso):* Stimulating interest, motivation, and persistence.\n    *   *Representation (Representación):* Presenting information in different ways (visual, auditory, etc.).\n    *   *Action & Expression (Acción y Expresión):* Providing multiple ways for students to demonstrate what they know.\n\n    *   *Líder:* Guides the group, ensures everyone is engaged.\n    *   *Secretario:* Records information, helps with representation/documentation.\n    *   *Controlador de tiempo:* Manages the process/flow.\n    *   *Portavoz:* Communicates results (expression).\n\n    *   *Goal:* Show how UDL principles are operationalized through these roles.\n\n    *   *Drafting - Step 1 (Mental Outline):*\n        To create an inclusive classroom, we use UDL. The **Líder** promotes **Compromiso** by motivating the group. The **Secretario** helps with **Representación** by organizing information in different formats. The **Controlador de tiempo** supports the process of **Acción y Expresión** by managing the pace. Finally, the **Portavoz** facilitates **Acción y Expresión"
+    },
+    "guias_pdf_narrativa": {
+      "model": "gemma-4-26b-a4b-it",
+      "tokens": 654,
+      "content": "*   Genre: Copla afrocaucana y cafetera (rhythmic, rhyming, traditional folk style from the Cauca region, often involving themes of nature, work, and community).\n*   Target Audience: 4th-grade children (approx. 9-10 years old) in Guachené (a municipality in Cauca, Colombia, with a strong Afro-Colombian heritage).\n*   Topic: Why PET plastic (which has 0% absorption) is useful for covering clean water tanks.\n*   Key technical concept: PET plastic does not absorb anything (0 cm absorption), making it an effective barrier to keep water clean.\n*   Quantity: 2 stanzas.\n\n    *   *Guachené/Afrocauca context:* Mentioning the river, the coffee, the joy, the community, or the rhythm (currulao/bambuco influence).\n    *   *The Problem:* Water must stay clean. Contamination is bad.\n    *   *The Solution:* PET plastic.\n    *   *The Science:* \"No absorbe nada\" (doesn't absorb anything), \"Cero absorción.\"\n    *   *The Metaphor:* A shield, a lid, a protector.\n\n    *   *Stanza 1: Setting the scene and the problem.*\n        In Guachené, we love our water. We need it for coffee and life. But we must keep it pure.\n        *Drafting lines:*\n        En mi Guachené querido,\n        el agua es un tesoro,\n        la cuidamos con esmero,\n        más que el oro.\n\n        *Refining for the PET concept:*\n        Escuchen bien, mis niños,\n        lo que el profe les dirá,\n        el agua limpia es vida,\n        y no se debe ensuciar.\n\n    *   *Stanza 2: Introducing PET and the \"0 absorption\" concept.*\n        Use PET to cover the tank. It doesn't soak up anything.\n        *Drafting lines:*\n        Usa el plástico PET,\n        para el tanque tapar,\n        como no absorbe nada,\n        el agua va a cuidar.\n\n        *Making it more \"Copla\" style (AABB or ABAB rhyme, rhythmic):*\n        Con el plástico PET,\n        el tanque vamos a tapar,\n        pues no absorbe ni una gota,\n        y el agua va a preservar.\n\n    *   *Stanza 1:*\n        \"En las tierras de Guachené,\n        donde el café es primor,\n        cuidamos nuestra agüita,\n        con mucho amor y valor.\"\n        (Good, sets the tone).\n\n    *   *Stanza 2:*"
+    }
+  },
+  "total_tokens": 2619
+}

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3: Divulgación Comunitaria Ubuntu y Evaluación DUA | Tejiendo Saberes STEM+A</title>
+  <meta name="description" content="Sesión 3 (60 min): Socialización creativa multimodal (coplas afrocaucanas, infografías Nasa, feria de la ciencia, reportajes y TikTok educativo) y rúbrica formativa DUA de 6 criterios.">
+
+  <!-- Google Fonts: Outfit + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@600;700;800&amp;display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- KaTeX 0.16.9 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Chart.js 4.4.1 -->
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Hoja de Estilos Intercultural -->
+  <link rel="stylesheet" href="css/styles.css?v=20261112">
+
+  <!-- Scripts de la Arquitectura Modular -->
+  <script defer src="js/app.js?v=20261112"></script>
+  <script defer src="js/simulators.js?v=20261112"></script>
+</head>
+<body>
+  <div class="chumbe-ribbon" aria-hidden="true"></div>
+
+  <!-- CABECERA SUPERIOR DUA E INTERCULTURAL -->
+  <header class="top-header">
+    <div class="brand-logo">
+      <i class="fa-solid fa-hands-holding-circle" aria-hidden="true"></i>
+      <span>Tejiendo Saberes · STEM+A &amp; DUA</span>
+      <span class="badge-tech">Sesión 3 · 60 min</span>
+    </div>
+    <div class="top-actions" role="toolbar" aria-label="Herramientas de accesibilidad DUA y descargas">
+      <a href="assets/guias/Guia_03_Divulgacion_Familiar_y_Coplas.pdf" class="btn-colab-nav" download title="Descargar Guía Imprimible Sesión 3">
+        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Guía PDF S3
+      </a>
+      <button type="button" id="btnFontIncrease" class="btn-dua-tool" aria-pressed="false" title="Aumentar tamaño de letra (Macrotipo DUA)">
+        <i class="fa-solid fa-text-height" aria-hidden="true"></i> A+
+      </button>
+      <button type="button" id="btnHighContrast" class="btn-dua-tool" aria-pressed="false" title="Activar alto contraste visual DUA">
+        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Contraste
+      </button>
+      <button type="button" id="btnReadAloud" class="btn-dua-tool" aria-pressed="false" title="Lectura en voz alta de la página">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i> Escuchar
+      </button>
+      <button type="button" id="themeToggleBtn" class="btn-theme-toggle" aria-label="Cambiar entre modo claro pergamino y modo oscuro">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i> Tema
+      </button>
+    </div>
+  </header>
+
+  <div class="layout-wrapper">
+    <!-- MENÚ LATERAL FIJO -->
+    <aside class="sidebar" aria-label="Navegación del proyecto pedagógico">
+      <div class="sidebar-category">Ruta Pedagógica STEM+A</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i>
+            <span>Inicio · Mapa General</span>
+          </a>
+        </li>
+        <li>
+          <a href="modulo01_teatro_epidemiologico.html">
+            <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+            <span>Módulo 1 · Teatro en Tonga</span>
+          </a>
+        </li>
+        <li>
+          <a href="modulo02_laboratorio_materiales.html">
+            <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+            <span>Módulo 2 · Laboratorio Capilar</span>
+          </a>
+        </li>
+        <li>
+          <a href="modulo03_divulgacion_evaluacion.html" class="active" aria-current="page">
+            <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+            <span>Módulo 3 · Divulgación Ubuntu</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-category">Secciones de este Módulo</div>
+      <ul class="sidebar-menu">
+        <li><a href="#fundamentacion"><i class="fa-solid fa-scale-unbalanced-flip" aria-hidden="true"></i> <span>1. Etnoeducación y DUA</span></a></li>
+        <li><a href="#metafora"><i class="fa-solid fa-music" aria-hidden="true"></i> <span>2. Metáfora: Tambor y Palabra</span></a></li>
+        <li><a href="#simulador"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> <span>3. Coplas y Rúbrica Radar</span></a></li>
+        <li><a href="#diagnostico"><i class="fa-solid fa-list-check" aria-hidden="true"></i> <span>4. Los 6 Criterios DUA</span></a></li>
+        <li><a href="#cuaderno"><i class="fa-solid fa-book-open" aria-hidden="true"></i> <span>5. Bitácora y Guías PDF</span></a></li>
+        <li><a href="#evaluacion"><i class="fa-solid fa-award" aria-hidden="true"></i> <span>6. Compromiso Ubuntu</span></a></li>
+      </ul>
+
+      <div class="sidebar-category">Cartillas Imprimibles PDF</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="assets/guias/Guia_01_Teatro_Epidemiologico_Tonga.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 01 · Teatro en Tonga</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_02_Protocolo_Laboratorio_Materiales.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 02 · Laboratorio Tiras</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_03_Divulgacion_Familiar_y_Coplas.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 03 · Coplas y Familia</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_04_Rubrica_Formativa_DUA_Docente.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 04 · Rúbrica Docente</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL CON LAS 7 SECCIONES CANÓNICAS -->
+    <main class="main-content">
+
+      <!-- 1. HERO DEL MÓDULO -->
+      <header class="module-hero">
+        <div class="hero-badges">
+          <span class="badge-stage"><i class="fa-regular fa-clock" aria-hidden="true"></i> Sesión 3 · 60 Minutos · Castellano, Artes, Tecnología y Evaluación DUA</span>
+          <span class="badge-culture afro">Copla y Décima del Pacífico-Cauca</span>
+          <span class="badge-culture nasa">Simbología del Chumbe</span>
+          <span class="badge-culture cafe">Encuentro Veredal de Saberes</span>
+        </div>
+        <h1>Módulo 3: Divulgación Comunitaria en Clave Ubuntu y Evaluación Formativa DUA</h1>
+        <p>
+          La ciencia que nace en la escuela regresa a las familias de Guachené y La Unión del Salado: transformamos nuestras conclusiones experimentales ($\bar{x}_{\text{plástico}} = 0.00\text{ cm}$) en <strong>coplas, infografías, ferias científicas, reportajes y pódcast</strong>, y evaluamos el proceso mediante una rúbrica formativa equitativa.
+        </p>
+        <figure class="hero-figure">
+          <img src="assets/img/divulgacion_ubuntu.jpg" alt="Estudiantes y familias compartiendo en la feria escolar coplas, afiches e inventos para proteger el agua contra el dengue">
+        </figure>
+      </header>
+
+      <!-- 2. FUNDAMENTACIÓN DE COMUNICACIÓN INTERCULTURAL Y EVALUACIÓN DUA -->
+      <section class="content-section" id="fundamentacion">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <h2>Fundamentación: Comunicación Científica Intercultural y Evaluación Equitativa</h2>
+        </div>
+
+        <p>
+          En coherencia con el <strong>Decreto 804 de 1995</strong> (Atención Educativa para Grupos Étnicos en Colombia) y las <strong>Pautas DUA 5.1, 5.2 y 9.3</strong> de CAST (2024), el conocimiento científico cobra sentido social cuando dialoga con la tradición oral, gráfica y comunitaria del territorio. Obligar a todo un grupo diverso a presentar un único examen escrito excluye talentos; por ello ofrecemos <strong>cinco canales multimodales equivalentes</strong> y una matriz de evaluación formativa.
+        </p>
+
+        <div class="dua-callout">
+          <strong>Modelo Matemático de Valoración Formativa Equitativa (6 Criterios $\times$ 3 Niveles):</strong>
+          <p>
+            La hoja <em>2_Rubrica_Evaluacion</em> del prototipo Excel define $K = 6$ criterios integrales valorados en una escala ordinal $N_k \in \{1, 2, 3\}$ (donde $1 = \text{En Inicio}$, $2 = \text{En Proceso}$, $3 = \text{Logrado}$) junto con un factor de equidad $\delta_{\text{apoyo}} = 0$ que garantiza <strong>cero penalización</strong> por el uso de apoyos de accesibilidad (plantillas, macrotipo, audio o regletas táctiles):
+          </p>
+          $$I_{\text{DUA}} = \frac{1}{K}\sum_{k=1}^{6} N_k - \delta_{\text{apoyo}} = \frac{N_1 + N_2 + N_3 + N_4 + N_5 + N_6}{6} \in [1.00, 3.00]$$
+          <p style="margin-bottom: 0;">
+            Cuando $I_{\text{DUA}} \ge 2.50$, el estudiante o equipo en Tonga alcanza el nivel <strong>Logrado con Excelencia Comunitaria</strong>; si $1.70 \le I_{\text{DUA}} &lt; 2.50$, se encuentra <strong>En Proceso Consolidado</strong>; y si $I_{\text{DUA}} &lt; 1.70$, recibe retroalimentación personalizada y andamiaje adicional.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. METÁFORA CONCEPTUAL -->
+      <section class="content-section" id="metafora">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <h2>Metáfora Conceptual: El Llamado del Tambor, el Tejido de la Palabra y el Convite</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-drum" aria-hidden="true"></i> El Canto y la Copla Afrocaucana</h3>
+            <p>
+              En Guachené y La Unión del Salado, el verso rimado al compás de las palmas y el tambor hace que el mensaje preventivo se quede grabado en la memoria de niños y mayores: <em>"Agua limpia bien tapada, deja a la zancuda derrotada"</em>.
+            </p>
+          </div>
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-palette" aria-hidden="true"></i> La Palabra Pintada en el Chumbe</h3>
+            <p>
+              Quienes prefieren la expresión visual diseñan infografías y pictogramas inspirados en la geometría del <strong>Chumbe Nasa</strong>, mostrando con colores claros cómo el plástico ($\bar{x} = 0\text{ cm}$) protege el agua de la casa.
+            </p>
+          </div>
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-radio" aria-hidden="true"></i> La Radio Veredal y la Feria Cafetera</h3>
+            <p>
+              Como en los perifoneos y encuentros veredales de las fincas cafeteras, los equipos exponen sus prototipos de tapas y trampas caseras ante las familias invitadas.
+            </p>
+          </div>
+        </div>
+
+        <figure style="margin: 1.5rem 0; text-align: center; background: var(--bg-elevated); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <img src="assets/img/mapa_intercultural_trietnico.svg" alt="Síntesis gráfica de la articulación entre las tres culturas del Cauca, los cinco canales de divulgación DUA y la salud pública comunitaria" style="max-width: 100%; height: auto; max-height: 300px;">
+          <figcaption style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.65rem;">
+            <strong>Figura 3.1:</strong> Cierre del ciclo de indagación: la evidencia experimental del aula se transforma en acción preventiva en el territorio.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 4. SIMULADORES INTERACTIVOS: ESTUDIO CREATIVO Y CALCULADORA DE RÚBRICA -->
+      <section class="content-section" id="simulador">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <h2>Estudio Creativo Multimodal y Calculadora de Rúbrica Formativa DUA</h2>
+        </div>
+
+        <!-- PARTE A: ESTUDIO CREATIVO MULTIMODAL Y GENERADOR DE COPLAS -->
+        <div id="estudioDivulgacion" class="sim-panel">
+          <h3><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> A. Estudio Creativo Multimodal y Generador de Coplas en Tonga</h3>
+          <p>
+            Selecciona uno de los <strong>5 canales de expresión DUA</strong> contemplados en la planeación, elige la raíz cultural que deseas destacar, incorpora el saber de tu familia y genera tu pieza comunicativa (puedes acompañarla con un pulso rítmico generado en vivo con Web Audio API):
+          </p>
+
+          <div class="sim-controls-grid">
+            <div class="control-group">
+              <label for="selectCanalDUA">1. Canal de Expresión DUA (5 Opciones del Excel):</label>
+              <select id="selectCanalDUA" class="sim-select">
+                <option value="copla" selected>Canción / Copla Tradicional Rimada</option>
+                <option value="infografia">Infografía Pictográfica / Cartel Visual</option>
+                <option value="feria">Stand en Feria de la Ciencia con Prototipo</option>
+                <option value="reportaje">Reportaje Radial / Pódcast Veredal</option>
+                <option value="tiktok">Guion de Video Corto / TikTok Educativo</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="selectIdentidadCultural">2. Enfoque Cultural Territorial:</label>
+              <select id="selectIdentidadCultural" class="sim-select">
+                <option value="afro" selected>Afrocaucano (Tonga y Ubuntu · Guachené / La Unión del Salado)</option>
+                <option value="nasa">Indígena Nasa (Tejido del Chumbe y Cuidado de Uma Kiwe)</option>
+                <option value="cafetera">Campesino Cafetero (Cosecha de Agua y Convite Veredal)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="inputSaberFamiliar">3. Saber o Consejo de tu Familia (Bitácora):</label>
+              <input type="text" id="inputSaberFamiliar" class="sim-input-text" value="Tapar la caneca con plástico grueso y caucho de neumático" placeholder="Ej. Cepillar la alberca y amarrar plástico...">
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; align-items: center;">
+            <button type="button" id="btnGenerarMensajeTonga" class="btn-primary" disabled style="opacity: 0.5; cursor: not-allowed;" title="Generador desactivado: configure su API key en el código fuente">
+              <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Generar Infografía DUA (Desactivado)
+            </button>
+            <button type="button" id="btnDescargarInfografiaPDF" class="btn-download" style="background: linear-gradient(135deg, #b91c1c, #991b1b); color: #ffffff; border: 2px solid #f59e0b; font-weight: 700; cursor: pointer;">
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Descargar Infografía PDF
+            </button>
+            <button type="button" id="btnReproducirRitmo" class="btn-secondary">
+              <i class="fa-solid fa-drum" aria-hidden="true"></i> Escuchar Pulso Rítmico de Tonga (Web Audio)
+            </button>
+          </div>
+
+          <div id="previewMensajeComunitario" class="dua-callout" aria-live="polite">
+            <div class="estudio-preview-card">
+              <div class="estudio-preview-header" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem;">
+                <span class="badge badge-canal">🎵 INFOGRAFÍA CANCIONERO / COPLA RÍTMICA</span>
+                <span class="badge badge-identidad">🌍 Comunidad Afrodescendiente (Tonga &amp; Ubuntu · Guachené y La Unión del Salado)</span>
+              </div>
+              <div class="estudio-preview-body">
+                <div class="infografia-poster theme-afro" id="posterInfografiaActiva">
+                  <div class="infografia-banner">
+                    <div>
+                      <div style="font-size:0.74rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.92;">
+                        🎵 INFOGRAFÍA CANCIONERO / COPLA RÍTMICA · DISEÑO ALEATORIO #1
+                      </div>
+                      <h4 id="infogHookTitle" style="margin:0.25rem 0; font-size:1.22rem;">¡Suena la marimba y el cununo en La Unión del Salado: al zancudo le cerramos el paso!</h4>
+                      <div style="font-size:0.84rem; opacity:0.95;"><i class="fa-solid fa-drum" aria-hidden="true"></i> Comunidad Afrodescendiente (Tonga &amp; Ubuntu · Guachené y La Unión del Salado)</div>
+                    </div>
+                    <span id="infogSeedBadge" class="badge-stage" style="background:rgba(0,0,0,0.35); color:#fff; border-color:#fff;">
+                      Semilla Visual #1/4 · Lista para PDF
+                    </span>
+                  </div>
+
+                  <div class="infografia-grid">
+                    <div class="infografia-quadrant">
+                      <h5><i class="fa-solid fa-mosquito" style="color:var(--nasa-crimson);" aria-hidden="true"></i> 1. Alerta Epidemiológica (Verso &amp; Vector)</h5>
+                      <div id="infogQ1Body" style="font-size:0.88rem;">La hembra infectada de <em>Aedes aegypti</em> transmite el virus por picadura diurna y deposita sus huevos en paredes de recipientes con agua limpia destapada.</div>
+                    </div>
+                    <div class="infografia-quadrant">
+                      <h5><i class="fa-solid fa-flask-vial" style="color:var(--afro-river);" aria-hidden="true"></i> 2. Copla Científica Generada (Semilla #1)</h5>
+                      <div id="infogQ2Body" style="font-size:0.88rem;">En Guachené y El Salado cantamos al son del tambor, / medimos tres materiales con regla y con rigor: / la tela subió a seis centímetros ($6.0\text{ cm}$), el papel a cuatro y medio ($4.5\text{ cm}$), / ¡y con plástico en cero ($0.0\text{ cm}$) tapamos el criadero!</div>
+                    </div>
+                    <div class="infografia-quadrant">
+                      <h5><i class="fa-solid fa-shield-halved" style="color:var(--nasa-emerald);" aria-hidden="true"></i> 3. Evidencia Cuantitativa de la Tonga</h5>
+                      <div id="infogQ3Body" style="font-size:0.88rem;">Media de 3 muestras ($2 \times 10\text{ cm}$): Papel $\bar{x}=4.5\text{ cm}$ (Permeable), Tela $\bar{x}=6.0\text{ cm}$ (Muy absorbente), Plástico PET $\bar{x}=0.0\text{ cm}$ (Impermeable).</div>
+                    </div>
+                    <div class="infografia-quadrant">
+                      <h5><i class="fa-solid fa-house-chimney-user" style="color:var(--afro-gold);" aria-hidden="true"></i> 4. Saber Familiar Integrado en Casa</h5>
+                      <div id="infogQ4Body" style="font-size:0.88rem;"><strong>Práctica del hogar:</strong> «Tapar la caneca con plástico grueso y caucho de neumático» · Accesible con canto coral, lectura asistida y regla táctil.</div>
+                    </div>
+                  </div>
+
+                  <div class="infografia-footer-bar">
+                    <span><strong><i class="fa-solid fa-universal-access" aria-hidden="true"></i> Accesibilidad DUA:</strong> Contenido valorado por su rigor científico y vínculo familiar (Pautas 5.1 y 5.2).</span>
+                    <span id="infogFooterLema"><strong>Ubuntu en la Tonga: «Yo soy porque nosotros somos» — Si tapamos el tanque en casa, protegemos a todo el barrio.</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTE B: CALCULADORA DE RÚBRICA FORMATIVA DUA (6 CRITERIOS X 3 NIVELES) -->
+        <div class="sim-panel">
+          <h3><i class="fa-solid fa-chart-pie" aria-hidden="true"></i> B. Calculadora Interactiva de Rúbrica Formativa DUA (6 Criterios $\times$ 3 Niveles)</h3>
+          <p>
+            Evalúa el desempeño integral en las 3 sesiones seleccionando el nivel alcanzado en cada uno de los <strong>6 criterios oficiales de la hoja Excel (<em>2_Rubrica_Evaluacion</em>)</strong>. Verifica cómo el uso de apoyos DUA mantiene la equidad evaluativa:
+          </p>
+
+          <div class="sim-controls-grid">
+            <div class="control-group">
+              <label for="selectModalidadEval">Modalidad Participativa:</label>
+              <select id="selectModalidadEval" class="sim-select">
+                <option value="Autoevaluación" selected>Autoevaluación del Estudiante (Pauta DUA 9.3)</option>
+                <option value="Coevaluación">Coevaluación entre Pares de la Tonga</option>
+                <option value="Heteroevaluación">Heteroevaluación Docente Formativa</option>
+              </select>
+            </div>
+
+            <div class="control-group" style="justify-content: center;">
+              <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; margin-top: 1.2rem;">
+                <input type="checkbox" id="checkApoyoDUA" checked>
+                <span>Estudiante utilizó apoyos de accesibilidad DUA (Sin penalización)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="control-group">
+              <label for="crit1">1. Comprensión del problema y ciclo del vector (S1):</label>
+              <select id="crit1" class="sim-select">
+                <option value="1">Nivel 1 · En Inicio (Reconoce el mosquito de forma aislada)</option>
+                <option value="2">Nivel 2 · En Proceso (Describe criadero y picadura)</option>
+                <option value="3" selected>Nivel 3 · Logrado (Relaciona agua estancada, vector y efecto comunidad)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="crit2">2. Indagación y medición experimental (S2):</label>
+              <select id="crit2" class="sim-select">
+                <option value="1">Nivel 1 · En Inicio (Observa sin registrar datos)</option>
+                <option value="2">Nivel 2 · En Proceso (Registra mediciones parciales)</option>
+                <option value="3" selected>Nivel 3 · Logrado (Mide las 3 tiras y calcula o interpreta promedios)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="crit3">3. Aplicación de soluciones tecnológicas / trampa (S2):</label>
+              <select id="crit3" class="sim-select">
+                <option value="1">Nivel 1 · En Inicio (Selecciona materiales al azar)</option>
+                <option value="2">Nivel 2 · En Proceso (Propone tapa sin sellado lateral)</option>
+                <option value="3" selected>Nivel 3 · Logrado (Sustenta el uso de plástico impermeable bien sellado)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="crit4">4. Comunicación creativa multimodal (S3):</label>
+              <select id="crit4" class="sim-select">
+                <option value="1">Nivel 1 · En Inicio (Mensaje incompleto o sin relación)</option>
+                <option value="2">Nivel 2 · En Proceso (Comunica la idea básica en su formato)</option>
+                <option value="3" selected>Nivel 3 · Logrado (Expresa con claridad científica y pertinencia cultural)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="crit5">5. Trabajo colaborativo en Tonga y Ubuntu (S1-S3):</label>
+              <select id="crit5" class="sim-select">
+                <option value="1">Nivel 1 · En Inicio (Dificultad para asumir su rol grupal)</option>
+                <option value="2" selected>Nivel 2 · En Proceso (Cumple su rol con recordatorios)</option>
+                <option value="3">Nivel 3 · Logrado (Lidera, incluye y apoya solidariamente a su Tonga)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="crit6">6. Articulación con saberes familiares y PEA (S1-S3):</label>
+              <select id="crit6" class="sim-select">
+                <option value="1">Nivel 1 · En Inicio (No realiza la consulta familiar)</option>
+                <option value="2">Nivel 2 · En Proceso (Comparte el saber familiar en el aula)</option>
+                <option value="3" selected>Nivel 3 · Logrado (Integra el saber de su hogar con la evidencia científica)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="rubricaResumenNivel" class="dua-callout" style="margin-top: 1rem;" aria-live="polite">
+            <strong>Resultado Formativo (Autoevaluación):</strong> Promedio $I_{\text{DUA}} = 2.83 / 3.00$ — <strong>Nivel 3: Logrado con Excelencia Comunitaria</strong> (Apoyos DUA validados con equidad plena).
+          </div>
+
+          <!-- Contenedor Anti-CLS Obligatorio -->
+          <div class="canvas-wrapper" style="position: relative; height: 280px; max-width: 680px; margin: 0 auto; width: 100%;">
+            <canvas id="chartRubricaRadar" aria-label="Gráfico de radar con el perfil de logro en los 6 criterios de la rúbrica formativa DUA"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. DIAGNÓSTICO DE LA RÚBRICA COMPLETA -->
+      <section class="content-section" id="diagnostico">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <h2>Matriz Completa de Descriptores de la Rúbrica DUA (Hoja 2 del Excel)</h2>
+        </div>
+
+        <div class="table-responsive">
+          <table class="stem-table" aria-label="Descriptores detallados de los 6 criterios y 3 niveles de la rúbrica DUA">
+            <thead>
+              <tr>
+                <th>Criterio Evaluado</th>
+                <th>Nivel 1: En Inicio ($1\text{ pto}$)</th>
+                <th>Nivel 2: En Proceso ($2\text{ ptos}$)</th>
+                <th>Nivel 3: Logrado ($3\text{ ptos}$)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Ciclo Vectorial</strong></td>
+                <td>Nombra el zancudo pero no lo asocia con depósitos de agua limpia.</td>
+                <td>Identifica el criadero y la picadura con apoyo de imágenes o pares.</td>
+                <td>Explica la secuencia completa criadero $\rightarrow$ vector $\rightarrow$ comunidad.</td>
+              </tr>
+              <tr>
+                <td><strong>2. Experimentación</strong></td>
+                <td>Participa en el montaje pero requiere guía constante para medir.</td>
+                <td>Mide el ascenso capilar en las tiras y anota datos en las celdas azules.</td>
+                <td>Compara con precisión las 3 repeticiones y utiliza el promedio $\bar{x}$ como prueba.</td>
+              </tr>
+              <tr>
+                <td><strong>3. Solución Ingeniería</strong></td>
+                <td>Propone cubiertas porosas sin considerar los datos del laboratorio.</td>
+                <td>Elige el plástico impermeable pero olvida el sellado del borde.</td>
+                <td>Diseña una cubierta impermeable y hermética o trampa funcional.</td>
+              </tr>
+              <tr>
+                <td><strong>4. Divulgación DUA</strong></td>
+                <td>Presenta una idea fragmentada en el canal seleccionado.</td>
+                <td>Comunica cómo tapar el agua usando su canal elegido (copla, cartel, audio).</td>
+                <td>Integra datos del experimento y saberes culturales en un mensaje persuasivo.</td>
+              </tr>
+              <tr>
+                <td><strong>5. Trabajo en Tonga</strong></td>
+                <td>Trabaja de forma aislada o interrumpe la participación de otros.</td>
+                <td>Asume su rol asignado dentro del grupo respetando acuerdos básicos.</td>
+                <td>Practica el principio <strong>Ubuntu</strong> cuidando que todos aporten desde sus fortalezas.</td>
+              </tr>
+              <tr>
+                <td><strong>6. Vínculo Familiar</strong></td>
+                <td>Aún no conecta las actividades escolares con las prácticas de su casa.</td>
+                <td>Trae la respuesta de su familia sobre cómo tapan los recipientes.</td>
+                <td>Lleva el compromiso preventivo de regreso a su hogar y vereda.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. CUADERNO DE CAMPO Y DESCARGA DE INSTRUMENTOS -->
+      <section class="content-section" id="cuaderno">
+        <div class="section-header">
+          <span class="section-number">05</span>
+          <h2>Bitácora Familiar e Instrumentos Imprimibles de Evaluación</h2>
+        </div>
+
+        <p>
+          Descarga las cartillas oficiales en PDF correspondientes a la <strong>Sesión 3</strong> y a la gestión docente de evaluación formativa:
+        </p>
+
+        <div class="grid-2">
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Guía 03: Divulgación Familiar y Coplas</h3>
+            <p>
+              Incluye la Bitácora Familiar (<em>Hoja 3 del Excel</em>), plantillas para componer coplas afrocaucanas, esquema de infografía con grecas del Chumbe Nasa y acta de compromiso comunitario en casa.
+            </p>
+            <a href="assets/guias/Guia_03_Divulgacion_Familiar_y_Coplas.pdf" class="btn-download" download>
+              <i class="fa-solid fa-download" aria-hidden="true"></i> Descargar Guía 03 (PDF)
+            </a>
+          </div>
+
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-clipboard-user" aria-hidden="true"></i> Guía 04: Rúbrica Formativa DUA Docente</h3>
+            <p>
+              Instrumento imprimible para el profesorado con la matriz de $6\text{ criterios} \times 3\text{ niveles}$, lista de chequeo de accesibilidad DUA y orientaciones de retroalimentación multigrado ($1.^\circ$ a $5.^\circ$).
+            </p>
+            <a href="assets/guias/Guia_04_Rubrica_Formativa_DUA_Docente.pdf" class="btn-secondary" download>
+              <i class="fa-solid fa-download" aria-hidden="true"></i> Descargar Guía 04 Docente (PDF)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CIERRE Y COMPROMISO UBUNTU -->
+      <section class="content-section" id="evaluacion">
+        <div class="section-header">
+          <span class="section-number">06</span>
+          <h2>Cierre del Proyecto: Nuestro Pacto Comunitario por la Vida</h2>
+        </div>
+
+        <div class="dua-callout">
+          <h3><i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i> Juramento Escolar en Tonga y Minga</h3>
+          <p style="margin-bottom: 0;">
+            <em>"Porque en Guachené, en La Unión del Salado, en el resguardo y en la finca cafetera la salud de uno es la salud de todos: revisamos juntos nuestros patios, cepillamos las albercas, tapamos el agua limpia con material impermeable y tejemos saberes entre la familia y la escuela."</em>
+          </p>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--border-color);">
+          <a href="modulo02_laboratorio_materiales.html" class="btn-secondary">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver al Módulo 2: Laboratorio de Materiales
+          </a>
+          <a href="index.html" class="btn-primary">
+            <i class="fa-solid fa-house" aria-hidden="true"></i> Regresar al Portal Principal del Proyecto
+          </a>
+        </div>
+
+        <div class="site-footer">
+          <p>
+            <strong>Proyecto: "Tejiendo saberes para prevenir el dengue"</strong> · IE Técnico San Jacinto (Guachené, Cauca) · Maestría en Educación STEM para el Desarrollo Social — Universidad Santo Tomás (2026).
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

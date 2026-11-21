@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1: Teatro Epidemiológico en Tonga | Tejiendo Saberes STEM+A &amp; DUA</title>
+  <meta name="description" content="Sesión 1 (60 min): Comprensión escénica y modelado epidemiológico de la transmisión del dengue por Aedes aegypti mediante Teatro en Tonga, Chumbe Nasa y Ubuntu.">
+
+  <!-- Google Fonts: Outfit + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@600;700;800&amp;display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- KaTeX 0.16.9 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Chart.js 4.4.1 -->
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Hoja de Estilos Intercultural -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Scripts de la Arquitectura Modular -->
+  <script defer src="js/app.js"></script>
+  <script defer src="js/simulators.js"></script>
+</head>
+<body>
+  <div class="chumbe-ribbon" aria-hidden="true"></div>
+
+  <!-- CABECERA SUPERIOR DUA E INTERCULTURAL -->
+  <header class="top-header">
+    <div class="brand-logo">
+      <i class="fa-solid fa-hands-holding-circle" aria-hidden="true"></i>
+      <span>Tejiendo Saberes · STEM+A &amp; DUA</span>
+      <span class="badge-tech">Sesión 1 · 60 min</span>
+    </div>
+    <div class="top-actions" role="toolbar" aria-label="Herramientas de accesibilidad DUA y descargas">
+      <a href="assets/guias/Guia_01_Teatro_Epidemiologico_Tonga.pdf" class="btn-colab-nav" download title="Descargar Guía Imprimible Sesión 1">
+        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Guía PDF S1
+      </a>
+      <button type="button" id="btnFontIncrease" class="btn-dua-tool" aria-pressed="false" title="Aumentar tamaño de letra (Macrotipo DUA)">
+        <i class="fa-solid fa-text-height" aria-hidden="true"></i> A+
+      </button>
+      <button type="button" id="btnHighContrast" class="btn-dua-tool" aria-pressed="false" title="Activar alto contraste visual DUA">
+        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Contraste
+      </button>
+      <button type="button" id="btnReadAloud" class="btn-dua-tool" aria-pressed="false" title="Lectura en voz alta de la página">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i> Escuchar
+      </button>
+      <button type="button" id="themeToggleBtn" class="btn-theme-toggle" aria-label="Cambiar entre modo claro pergamino y modo oscuro">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i> Tema
+      </button>
+    </div>
+  </header>
+
+  <div class="layout-wrapper">
+    <!-- MENÚ LATERAL FIJO -->
+    <aside class="sidebar" aria-label="Navegación del proyecto pedagógico">
+      <div class="sidebar-category">Ruta Pedagógica STEM+A</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i>
+            <span>Inicio · Mapa General</span>
+          </a>
+        </li>
+        <li>
+          <a href="modulo01_teatro_epidemiologico.html" class="active" aria-current="page">
+            <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+            <span>Módulo 1 · Teatro en Tonga</span>
+          </a>
+        </li>
+        <li>
+          <a href="modulo02_laboratorio_materiales.html">
+            <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+            <span>Módulo 2 · Laboratorio Capilar</span>
+          </a>
+        </li>
+        <li>
+          <a href="modulo03_divulgacion_evaluacion.html">
+            <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+            <span>Módulo 3 · Divulgación Ubuntu</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-category">Secciones de este Módulo</div>
+      <ul class="sidebar-menu">
+        <li><a href="#fundamentacion"><i class="fa-solid fa-dna" aria-hidden="true"></i> <span>1. Fundamentación Biológica</span></a></li>
+        <li><a href="#metafora"><i class="fa-solid fa-people-group" aria-hidden="true"></i> <span>2. Metáfora: Tonga y Chumbe</span></a></li>
+        <li><a href="#simulador"><i class="fa-solid fa-sliders" aria-hidden="true"></i> <span>3. Teatro y Simulador 2D</span></a></li>
+        <li><a href="#diagnostico"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i> <span>4. Diagnóstico Territorial</span></a></li>
+        <li><a href="#cuaderno"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i> <span>5. Cuaderno y Misión Familiar</span></a></li>
+        <li><a href="#evaluacion"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i> <span>6. Autoevaluación DUA</span></a></li>
+      </ul>
+
+      <div class="sidebar-category">Cartillas Imprimibles PDF</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="assets/guias/Guia_01_Teatro_Epidemiologico_Tonga.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 01 · Teatro en Tonga</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_02_Protocolo_Laboratorio_Materiales.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 02 · Laboratorio Tiras</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_03_Divulgacion_Familiar_y_Coplas.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 03 · Coplas y Familia</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_04_Rubrica_Formativa_DUA_Docente.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 04 · Rúbrica Docente</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL CON LAS 7 SECCIONES CANÓNICAS -->
+    <main class="main-content">
+
+      <!-- 1. HERO DEL MÓDULO -->
+      <header class="module-hero">
+        <div class="hero-badges">
+          <span class="badge-stage"><i class="fa-regular fa-clock" aria-hidden="true"></i> Sesión 1 · 60 Minutos · Artes, Ciencias y PEA</span>
+          <span class="badge-culture afro">Tonga &amp; Ubuntu · Guachené y La Unión del Salado</span>
+          <span class="badge-culture nasa">Tejido del Chumbe Nasa</span>
+          <span class="badge-culture cafe">Agua en Finca Cafetera</span>
+        </div>
+        <h1>Módulo 1: Teatro Epidemiológico en Tonga y Ciclo Vectorial del Dengue</h1>
+        <p>
+          Exploramos cómo una sola hembra infectada del mosquito <em>Aedes aegypti</em> desencadena una cadena de transmisión comunitaria cuando encuentra depósitos de agua limpia destapados, y cómo el trabajo colectivo en <strong>Tonga</strong> protege la salud de toda la vereda.
+        </p>
+        <figure class="hero-figure">
+          <img src="assets/img/teatro_tonga.jpg" alt="Estudiantes en la IE Técnico San Jacinto representando en Tonga las tres escenas del ciclo de transmisión del dengue">
+        </figure>
+      </header>
+
+      <!-- 2. FUNDAMENTACIÓN CIENTÍFICA Y MODELO MATEMÁTICO -->
+      <section class="content-section" id="fundamentacion">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <h2>Fundamentación Biológica y Modelo Matemático del Riesgo Vectorial</h2>
+        </div>
+
+        <p>
+          De acuerdo con la Organización Mundial de la Salud (OMS, 2024) y el Instituto Nacional de Salud de Colombia, el dengue es una enfermedad viral aguda transmitida por la picadura de hembras infectadas del género <em>Aedes</em>, principalmente <em>Aedes aegypti</em>. A diferencia de otros zancudos que buscan charcos lodosos, la hembra de <em>Aedes aegypti</em> es <strong>antropofílica y doméstica</strong>: deposita sus huevos adheridos a las paredes internas de tanques bajos, albercas, canecas, llantas y baldes con <strong>agua limpia estancada</strong> dentro o alrededor de la escuela y las viviendas.
+        </p>
+
+        <div class="grid-2">
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-mosquito" aria-hidden="true"></i> Ciclo Biológico Acuático y Aéreo</h3>
+            <p>
+              El ciclo comprende cuatro fases: <strong>huevo, larva, pupa</strong> (fases acuáticas que tardan entre $7$ y $10$ días en climas cálidos del norte del Cauca) y <strong>mosquito adulto</strong> (fase aérea). Los huevos resisten la desecación adheridos al borde del recipiente durante meses y eclosionan apenas el nivel del agua vuelve a subir.
+            </p>
+          </div>
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-virus" aria-hidden="true"></i> Cadena de Transmisión Vectorial</h3>
+            <p>
+              El mosquito no nace con el virus: una hembra sana pica primero a una persona con viremia (fase febril), incuba el virus durante el periodo extrínseco ($8$ a $12$ días) y luego transmite el dengue a cada familiar o vecino que pica para madurar sus huevos.
+            </p>
+          </div>
+        </div>
+
+        <div class="dua-callout">
+          <strong>Modelado Matemático del Índice de Riesgo Vectorial Comunitario:</strong>
+          <p>
+            En epidemiología escolar relacionamos la densidad de recipientes destapados ($R_d$), el factor térmico de incubación en el valle geográfico y piedemonte caucano ($\alpha_T$) y la fracción de protección alcanzada por el trabajo comunitario en Tonga ($C_{\text{tonga}} \in [0, 1]$). El número reproductivo básico local ($R_0$) y el Índice de Riesgo Comunitario ($I_{\text{riesgo}}$) se expresan mediante:
+          </p>
+          $$R_0 = \frac{m \cdot a^2 \cdot b \cdot c \cdot e^{-\mu \tau}}{\mu \cdot r} \qquad \Longrightarrow \qquad I_{\text{riesgo}} = \alpha_T \cdot \left(\frac{R_d}{R_{\max}}\right) \cdot \left(1 - C_{\text{tonga}}\right) \times 100$$
+          <p>
+            Cuando la comunidad organiza la <strong>Tonga preventiva</strong> y cubre el $100\%$ de sus tanques y canecas ($C_{\text{tonga}} = 1$), el término $(1 - C_{\text{tonga}})$ se anula ($I_{\text{riesgo}} = 0$), rompiendo por completo el ciclo reproductivo del vector sin necesidad de químicos contaminantes.
+          </p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="stem-table" aria-label="Tiempos de la Sesión 1 según el prototipo DUA">
+            <thead>
+              <tr>
+                <th>Momento de la Sesión (60 min)</th>
+                <th>Duración</th>
+                <th>Actividad Pedagógica y Pauta DUA</th>
+                <th>Operación Intelectual</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Apertura y Pregunta Retadora</strong></td>
+                <td>$10\text{ min}$</td>
+                <td>Observación de imágenes/sonidos del zancudo y activación de saberes familiares (DUA 7.2 Relevancia y autenticidad).</td>
+                <td>Motivación y Comprensión</td>
+              </tr>
+              <tr>
+                <td><strong>2. Dramatización en Tonga</strong></td>
+                <td>$25\text{ min}$</td>
+                <td>Conformación de grupos con roles diversos para representar las 3 escenas de la cadena epidemiológica (DUA 5.1 y 8.3).</td>
+                <td>Modelación y Trabajo Colectivo</td>
+              </tr>
+              <tr>
+                <td><strong>3. Reflexión Ubuntu y Registro</strong></td>
+                <td>$15\text{ min}$</td>
+                <td>Diálogo sobre el efecto dominó en la comunidad y registro escrito, pictográfico u oral (DUA 1.2 y 4.1).</td>
+                <td>Análisis Causal</td>
+              </tr>
+              <tr>
+                <td><strong>4. Cierre y Misión Familiar</strong></td>
+                <td>$10\text{ min}$</td>
+                <td>Asignación de la indagación en casa sobre cómo tapamos los recipientes de agua (Articulación PRAE-PEA).</td>
+                <td>Transferencia Territorial</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. METÁFORA CONCEPTUAL TRI-ÉTNICA -->
+      <section class="content-section" id="metafora">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <h2>Metáfora Conceptual: Tonga Afrocaucana, Tejido del Chumbe Nasa y Agua Cafetera</h2>
+        </div>
+
+        <p>
+          En la Institución Educativa Técnico San Jacinto (Guachené) y en territorios hermanos como La Unión del Salado, la ciencia no se aprende de forma aislada: se teje con la memoria viva de las tres raíces culturales que habitan el Cauca.
+        </p>
+
+        <div class="grid-3">
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-drum" aria-hidden="true"></i> La Tonga y el Principio Ubuntu</h3>
+            <p>
+              En la tradición afrocaucana, la <strong>Tonga</strong> es la juntanza solidaria para resolver una tarea que una sola persona no podría lograr. Bajo la filosofía <strong>Ubuntu</strong> (<em>"Yo soy porque nosotros somos"</em>), si nueve casas tapan su alberca pero una sola deja la caneca descubierta, el mosquito vuela hasta $100\text{ m}$ y enferma a toda la cuadra.
+            </p>
+          </div>
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-Lines-leaning" aria-hidden="true"></i> El Tejido del Chumbe Nasa</h3>
+            <p>
+              Para el pueblo Nasa, el <strong>Chumbe</strong> guarda en sus rombos la historia del territorio y la defensa de <em>Uma Kiwe</em> (Madre Tierra). Así como un hilo suelto debilita la faja tejida, un criadero desatendido rompe la armonía entre el agua, la familia y la salud colectiva.
+            </p>
+          </div>
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-mug-hot" aria-hidden="true"></i> El Agua en la Finca Cafetera</h3>
+            <p>
+              En la cultura cafetera y campesina, recolectar agua lluvia en canecas y tanques para el beneficio del café y el uso doméstico es vital. Cuidar esa agua con tapas firmes honra el trabajo de la tierra sin regalarle posada a las larvas del zancudo.
+            </p>
+          </div>
+        </div>
+
+        <figure style="margin: 1.5rem 0; text-align: center; background: var(--bg-elevated); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <img src="assets/img/mapa_intercultural_trietnico.svg" alt="Mapa conceptual intercultural que articula el saber Afro (Tonga y Ubuntu), el saber Indígena Nasa (Chumbe y Minga) y el saber Cafetero con el método científico STEM+A" style="max-width: 100%; height: auto; max-height: 320px;">
+          <figcaption style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.65rem;">
+            <strong>Figura 1.1:</strong> Diálogo de saberes tri-étnico (Afrodescendiente, Indígena Nasa y Cultura Cafetera) integrado al Proyecto Educativo Ambiental (PRAE-PEA).
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 4. SIMULADOR Y JUEGO INTERACTIVO -->
+      <section class="content-section" id="simulador">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <h2>Laboratorio Escénico y Simulador Epidemiológico 2D en Vivo</h2>
+        </div>
+
+        <!-- PARTE A: JUEGO 1 ARMANDO LAS 3 ESCENAS EN TONGA -->
+        <div class="sim-panel">
+          <h3><i class="fa-solid fa-masks-theater" aria-hidden="true"></i> Juego 1: Armando las 3 Escenas en Tonga (Pautas DUA 5.1 y 8.3)</h3>
+          <p>
+            Antes de salir al patio a dramatizar, elige tu <strong>rol accesible DUA</strong> dentro de la Tonga (ningún estudiante queda excluido por timidez o barreras comunicativas) y asigna el <strong>orden causal correcto ($1$, $2$ y $3$)</strong> a cada escena de la transmisión del dengue:
+          </p>
+
+          <div class="sim-controls-grid" style="align-items: end;">
+            <div class="control-group">
+              <label for="rolTeatroSelect">Selecciona tu Rol Multimodal en la Tonga:</label>
+              <select id="rolTeatroSelect" class="sim-select" aria-label="Seleccionar rol accesible en el teatro epidemiológico">
+                <option value="gestual">Actuación Gestual y Corporal (Expresión kinestésica sin texto obligatorio)</option>
+                <option value="narracion">Narración Oral y Copla (Relator comunitario o voz de abuela/abuelo)</option>
+                <option value="sonoro">Paisaje Sonoro y Ritmo (Zumbido del vector, lluvia y tambor de alerta)</option>
+                <option value="pictografico">Escenografía Pictográfica (Carteles visuales de criadero, vector y tapa)</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <button type="button" id="btnCheckTeatro" class="btn-primary">
+                <i class="fa-solid fa-check-double" aria-hidden="true"></i> Verificar Orden de la Tonga
+              </button>
+            </div>
+          </div>
+
+          <div id="teatroGameBoard" class="grid-3" role="region" aria-label="Tablero de las tres escenas del teatro epidemiológico">
+            <!-- Escena A: La Picadura -->
+            <div class="info-card card-nasa teatro-scene-card" data-scene="picadura" data-correct-order="2">
+              <h3><i class="fa-solid fa-syringe" aria-hidden="true"></i> Escena: La Picadura del Vector</h3>
+              <p>
+                La hembra adulta de <em>Aedes aegypti</em> emerge, pica a una persona con fiebre de dengue y luego vuela hacia las casas vecinas buscando más sangre para madurar sus huevos.
+              </p>
+              <div class="control-group" style="margin-top: 0.75rem;">
+                <label for="orderScenePicadura">Orden en la historia:</label>
+                <select id="orderScenePicadura" class="sim-select scene-order-select" data-expected="2">
+                  <option value="1">Paso 1 (Inicio)</option>
+                  <option value="2" selected>Paso 2 (Transmisión)</option>
+                  <option value="3">Paso 3 (Desenlace)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Escena B: El Criadero -->
+            <div class="info-card card-river teatro-scene-card" data-scene="criadero" data-correct-order="1">
+              <h3><i class="fa-solid fa-bucket" aria-hidden="true"></i> Escena: El Criadero en Depósito Destapado</h3>
+              <p>
+                En el patio queda una caneca o tanque con agua limpia estancada sin tapa. La zancuda deposita sus huevos en la pared húmeda y nacen larvas y pupas en pocos días.
+              </p>
+              <div class="control-group" style="margin-top: 0.75rem;">
+                <label for="orderSceneCriadero">Orden en la historia:</label>
+                <select id="orderSceneCriadero" class="sim-select scene-order-select" data-expected="1">
+                  <option value="1" selected>Paso 1 (Inicio)</option>
+                  <option value="2">Paso 2 (Transmisión)</option>
+                  <option value="3">Paso 3 (Desenlace)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Escena C: Efecto Dominó y Familia que Tapa el Agua -->
+            <div class="info-card card-cafe teatro-scene-card" data-scene="domino" data-correct-order="3">
+              <h3><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Escena: Efecto Dominó y Familia en Tonga</h3>
+              <p>
+                Varios vecinos enferman (efecto dominó), pero la vereda se reúne en <strong>Tonga</strong>, cepilla las paredes de las albercas y tapa firmemente todos los recipientes de agua.
+              </p>
+              <div class="control-group" style="margin-top: 0.75rem;">
+                <label for="orderSceneDomino">Orden en la historia:</label>
+                <select id="orderSceneDomino" class="sim-select scene-order-select" data-expected="3">
+                  <option value="1">Paso 1 (Inicio)</option>
+                  <option value="2">Paso 2 (Transmisión)</option>
+                  <option value="3" selected>Paso 3 (Desenlace)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div id="teatroFeedback" class="dua-callout" aria-live="polite">
+            <strong>Estado del Montaje Escénico:</strong> Secuencia causal lista ($1 \rightarrow \text{Criadero destapado}$, $2 \rightarrow \text{Picadura del mosquito infectado}$, $3 \rightarrow \text{Efecto dominó y Tonga que tapa el agua}$). Pulsa <em>"Verificar Orden de la Tonga"</em> para recibir tu guía de actuación según el rol DUA elegido.
+          </div>
+        </div>
+
+        <!-- PARTE B: SIMULADOR EPIDEMIOLÓGICO 2D EN VIVO -->
+        <div class="sim-panel">
+          <h3><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Simulador Epidemiológico 2D en Vivo: Dinámica de Casos en 30 Días</h3>
+          <p>
+            Modifica los controles deslizantes para observar en tiempo real cómo cambia la curva de personas en riesgo de dengue en la vereda durante $30$ días según el número de recipientes destapados, la temperatura ambiente del Cauca y el porcentaje de familias que participan en la <strong>Tonga preventiva</strong>:
+          </p>
+
+          <div class="sim-controls-grid">
+            <div class="control-group">
+              <label for="sliderRecipientesDestapados">
+                <span>Recipientes destapados por cuadra:</span>
+                <strong id="valRecipientes" class="badge-tech">4 recipientes</strong>
+              </label>
+              <input type="range" id="sliderRecipientesDestapados" class="sim-slider" min="0" max="10" step="1" value="4">
+            </div>
+
+            <div class="control-group">
+              <label for="sliderTemperaturaCauca">
+                <span>Temperatura media Cauca ($^\circ\text{C}$):</span>
+                <strong id="valTempCauca" class="badge-tech">28 °C</strong>
+              </label>
+              <input type="range" id="sliderTemperaturaCauca" class="sim-slider" min="18" max="34" step="1" value="28">
+            </div>
+
+            <div class="control-group">
+              <label for="sliderCoberturaTonga">
+                <span>Cobertura de la Tonga (% tapado):</span>
+                <strong id="valCoberturaTonga" class="badge-tech">35 %</strong>
+              </label>
+              <input type="range" id="sliderCoberturaTonga" class="sim-slider" min="0" max="100" step="5" value="35">
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem;">
+            <div>
+              <strong>Diagnóstico Epidemiológico Instantáneo:</strong>
+              <span id="riesgoDengueBadge" class="badge-stage" style="font-size: 0.9rem; margin-left: 0.5rem;">Riesgo Moderado-Alto · Activar Tonga Barrial</span>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+              Meta Ubuntu: Llevar la cobertura de la Tonga por encima del $85\%$
+            </span>
+          </div>
+
+          <!-- Contenedor Anti-CLS Obligatorio -->
+          <div class="canvas-wrapper" style="position: relative; height: 280px; max-width: 680px; margin: 0 auto; width: 100%;">
+            <canvas id="chartTransmisionDengue" aria-label="Gráfico de proyección epidemiológica de casos de dengue con y sin intervención de la Tonga comunitaria"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. DIAGNÓSTICO TERRITORIAL -->
+      <section class="content-section" id="diagnostico">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <h2>Diagnóstico Territorial: ¿Dónde se Esconde el Vector en Nuestra Vereda?</h2>
+        </div>
+
+        <p>
+          En el diagnóstico participativo del Proyecto Ambiental Escolar (PRAE-PEA) en Guachené y las veredas cafeteras y afrodescendientes del norte del Cauca, identificamos los cuatro depósitos críticos donde la hembra de <em>Aedes aegypti</em> concentra más del $80\%$ de sus posturas:
+        </p>
+
+        <div class="grid-2">
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-faucet-drip" aria-hidden="true"></i> 1. Tanques Bajos y Albercas Domésticas</h3>
+            <p>
+              Almacenan agua limpia para el hogar cuando falla el acueducto veredal. Si permanecen sin tapa o con tapas de madera o tela que absorben humedad, permiten la entrada libre de hembras grávidas.
+            </p>
+          </div>
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-cloud-rain" aria-hidden="true"></i> 2. Canecas de Agua Lluvia en el Patio</h3>
+            <p>
+              Usadas tradicionalmente para regar el solar y lavar el café. Requieren una cubierta impermeable ajustada al borde con caucho o zuncho para impedir el paso del mosquito.
+            </p>
+          </div>
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> 3. Llantas, Tarros y Recipientes en Desuso</h3>
+            <p>
+              Acumulan agua lluvia limpia a la sombra. En la <strong>Minga y Tonga escolar</strong> se clasifican para reciclaje o se colocan bajo techo seco.
+            </p>
+          </div>
+          <div class="info-card card-river">
+            <h3><i class="fa-solid fa-school" aria-hidden="true"></i> 4. Bebederos, Materas y Canales Escolares</h3>
+            <p>
+              Puntos de observación directa durante el recorrido por la IE Técnico San Jacinto que preparan la pregunta experimental para el Laboratorio de Materiales de la Sesión 2.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CUADERNO DE CAMPO Y MISIÓN FAMILIAR -->
+      <section class="content-section" id="cuaderno">
+        <div class="section-header">
+          <span class="section-number">05</span>
+          <h2>Cuaderno de Campo y Misión Familiar en Casa</h2>
+        </div>
+
+        <div class="dua-callout">
+          <h3><i class="fa-solid fa-house-chimney-user" aria-hidden="true"></i> Misión Familiar para la Próxima Clase (Articulación Escuela-Comunidad)</h3>
+          <p>
+            Al llegar hoy a tu casa en el barrio o la vereda, conversa con tus abuelos, padres o cuidadores y registra en tu cuaderno (con un dibujo, una nota escrita o un audio corto) la respuesta a nuestra pregunta investigadora:
+          </p>
+          <p style="font-size: 1.15rem; margin: 0.75rem 0;">
+            <strong><em>"¿Cómo protegen los recipientes de agua y por qué?"</em></strong>
+          </p>
+          <p style="margin-bottom: 0;">
+            Observa qué material usan en casa para tapar las canecas o el tanque (plástico, costal, tela, tabla, tapa plástica o ninguno). Con ese saber familiar diseñaremos nuestro experimento científico en la <strong>Sesión 2</strong>.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Cartilla Imprimible de la Sesión 1</h3>
+            <p>
+              Contiene el guion gráfico de las 3 escenas en Tonga, recortables pictográficos DUA para estudiantes de $1.^\circ$ a $5.^\circ$ y la ficha ilustrada de la Misión Familiar.
+            </p>
+            <a href="assets/guias/Guia_01_Teatro_Epidemiologico_Tonga.pdf" class="btn-download" download>
+              <i class="fa-solid fa-download" aria-hidden="true"></i> Descargar Guía 01 (PDF)
+            </a>
+          </div>
+
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> Documento Maestro: Estrategia DUA</h3>
+            <p>
+              Consulta el documento pedagógico original de la Maestría en Educación STEM con la fundamentación completa de las 3 sesiones, pautas DUA y enfoque intercultural.
+            </p>
+            <a href="fuentes/Estrategia DUA -Maestría Stem.pdf" class="btn-secondary" download>
+              <i class="fa-solid fa-file-Lines" aria-hidden="true"></i> Descargar Estrategia DUA (PDF)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. EVALUACIÓN FORMATIVA DEL MÓDULO 1 -->
+      <section class="content-section" id="evaluacion">
+        <div class="section-header">
+          <span class="section-number">06</span>
+          <h2>Autoevaluación Formativa DUA de la Sesión 1</h2>
+        </div>
+
+        <p>
+          Revisa tus aprendizajes de esta primera sesión. Recuerda que en el Diseño Universal para el Aprendizaje puedes demostrar lo que comprendiste mediante actuación, dibujo, explicación oral o texto escrito:
+        </p>
+
+        <div class="grid-3">
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-seedling" aria-hidden="true"></i> Nivel 1 · En Inicio</h3>
+            <p>
+              Identifico que el mosquito transmite el dengue, pero aún necesito apoyo visual o del grupo para relacionar el recipiente de agua destapado con la reproducción de las larvas.
+            </p>
+          </div>
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-people-carry-box" aria-hidden="true"></i> Nivel 2 · En Proceso</h3>
+            <p>
+              Ordeno correctamente las 3 escenas (criadero, picadura y efecto dominó) y participo en mi rol de la Tonga reconociendo la importancia de tapar el agua.
+            </p>
+          </div>
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-star" aria-hidden="true"></i> Nivel 3 · Logrado con Ubuntu</h3>
+            <p>
+              Explico cómo el cuidado colectivo en Tonga reduce el riesgo vectorial ($I_{\text{riesgo}} \rightarrow 0$) y llevo la misión familiar a mi hogar para conectar el saber ancestral con la ciencia escolar.
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--border-color);">
+          <a href="index.html" class="btn-secondary">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver al Mapa General
+          </a>
+          <a href="modulo02_laboratorio_materiales.html" class="btn-primary">
+            Continuar al Módulo 2: Laboratorio de Materiales <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="site-footer">
+          <p>
+            <strong>Proyecto: "Tejiendo saberes para prevenir el dengue"</strong> · IE Técnico San Jacinto (Guachené, Cauca) · Maestría en Educación STEM para el Desarrollo Social — Universidad Santo Tomás (2026).
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

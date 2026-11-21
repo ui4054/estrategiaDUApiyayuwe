@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2: Laboratorio de Materiales y Capilaridad | Tejiendo Saberes STEM+A &amp; DUA</title>
+  <meta name="description" content="Sesión 2 (120 min): Indagación experimental de absorción capilar en papel, tela y plástico, cálculo de la media aritmética y diseño de cubierta protectora y trampa casera.">
+
+  <!-- Google Fonts: Outfit + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@600;700;800&amp;display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- KaTeX 0.16.9 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Chart.js 4.4.1 -->
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Hoja de Estilos Intercultural -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Scripts de la Arquitectura Modular -->
+  <script defer src="js/app.js"></script>
+  <script defer src="js/simulators.js"></script>
+</head>
+<body>
+  <div class="chumbe-ribbon" aria-hidden="true"></div>
+
+  <!-- CABECERA SUPERIOR DUA E INTERCULTURAL -->
+  <header class="top-header">
+    <div class="brand-logo">
+      <i class="fa-solid fa-hands-holding-circle" aria-hidden="true"></i>
+      <span>Tejiendo Saberes · STEM+A &amp; DUA</span>
+      <span class="badge-tech">Sesión 2 · 120 min</span>
+    </div>
+    <div class="top-actions" role="toolbar" aria-label="Herramientas de accesibilidad DUA y descargas">
+      <a href="assets/guias/Guia_02_Protocolo_Laboratorio_Materiales.pdf" class="btn-colab-nav" download title="Descargar Guía Imprimible Sesión 2">
+        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Guía PDF S2
+      </a>
+      <button type="button" id="btnFontIncrease" class="btn-dua-tool" aria-pressed="false" title="Aumentar tamaño de letra (Macrotipo DUA)">
+        <i class="fa-solid fa-text-height" aria-hidden="true"></i> A+
+      </button>
+      <button type="button" id="btnHighContrast" class="btn-dua-tool" aria-pressed="false" title="Activar alto contraste visual DUA">
+        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Contraste
+      </button>
+      <button type="button" id="btnReadAloud" class="btn-dua-tool" aria-pressed="false" title="Lectura en voz alta de la página">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i> Escuchar
+      </button>
+      <button type="button" id="themeToggleBtn" class="btn-theme-toggle" aria-label="Cambiar entre modo claro pergamino y modo oscuro">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i> Tema
+      </button>
+    </div>
+  </header>
+
+  <div class="layout-wrapper">
+    <!-- MENÚ LATERAL FIJO -->
+    <aside class="sidebar" aria-label="Navegación del proyecto pedagógico">
+      <div class="sidebar-category">Ruta Pedagógica STEM+A</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i>
+            <span>Inicio · Mapa General</span>
+          </a>
+        </li>
+        <li>
+          <a href="modulo01_teatro_epidemiologico.html">
+            <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+            <span>Módulo 1 · Teatro en Tonga</span>
+          </a>
+        </li>
+        <li>
+          <a href="modulo02_laboratorio_materiales.html" class="active" aria-current="page">
+            <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+            <span>Módulo 2 · Laboratorio Capilar</span>
+          </a>
+        </li>
+        <li>
+          <a href="modulo03_divulgacion_evaluacion.html">
+            <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+            <span>Módulo 3 · Divulgación Ubuntu</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-category">Secciones de este Módulo</div>
+      <ul class="sidebar-menu">
+        <li><a href="#fundamentacion"><i class="fa-solid fa-square-root-variable" aria-hidden="true"></i> <span>1. Capilaridad y Media $\bar{x}$</span></a></li>
+        <li><a href="#metafora"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i> <span>2. Metáfora: Jigra y Costal</span></a></li>
+        <li><a href="#simulador"><i class="fa-solid fa-vials" aria-hidden="true"></i> <span>3. Simulador y Hoja Excel</span></a></li>
+        <li><a href="#diagnostico"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> <span>4. Análisis de Materiales</span></a></li>
+        <li><a href="#cuaderno"><i class="fa-solid fa-file-excel" aria-hidden="true"></i> <span>5. Protocolo y Plantilla</span></a></li>
+        <li><a href="#evaluacion"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i> <span>6. Verificación Científica</span></a></li>
+      </ul>
+
+      <div class="sidebar-category">Cartillas Imprimibles PDF</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="assets/guias/Guia_01_Teatro_Epidemiologico_Tonga.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 01 · Teatro en Tonga</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_02_Protocolo_Laboratorio_Materiales.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 02 · Laboratorio Tiras</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_03_Divulgacion_Familiar_y_Coplas.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 03 · Coplas y Familia</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_04_Rubrica_Formativa_DUA_Docente.pdf" download>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Guía 04 · Rúbrica Docente</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL CON LAS 7 SECCIONES CANÓNICAS -->
+    <main class="main-content">
+
+      <!-- 1. HERO DEL MÓDULO -->
+      <header class="module-hero">
+        <div class="hero-badges">
+          <span class="badge-stage"><i class="fa-regular fa-clock" aria-hidden="true"></i> Sesión 2 · 120 Minutos · Ciencias, Matemáticas, Ingeniería y Tecnología</span>
+          <span class="badge-culture nasa">Sistematización en Minga</span>
+          <span class="badge-culture afro">Experimentación en Tonga</span>
+          <span class="badge-culture cafe">Ingeniería de Cubiertas y Trampas</span>
+        </div>
+        <h1>Módulo 2: Laboratorio de Materiales, Ascenso Capilar y Prototipado</h1>
+        <p>
+          Ponemos a prueba los materiales que nuestras familias mencionaron en casa (<strong>papel, tela y plástico</strong>) mediante un experimento controlado de capilaridad e impermeabilidad, calculamos promedios estadísticos ($\bar{x}$) y construimos una cubierta protectora y una trampa ecológica contra el vector.
+        </p>
+        <figure class="hero-figure">
+          <img src="assets/img/laboratorio_capilaridad.jpg" alt="Equipo de estudiantes en el laboratorio escolar midiendo con reglas táctiles el ascenso de agua en tiras de papel, tela y plástico">
+        </figure>
+      </header>
+
+      <!-- 2. FUNDAMENTACIÓN CIENTÍFICA Y MATEMÁTICA -->
+      <section class="content-section" id="fundamentacion">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <h2>Fundamentación Físico-Matemática: Ley de Ascenso Capilar y Media Aritmética</h2>
+        </div>
+
+        <p>
+          Para decidir científicamente qué material protege mejor los tanques y canecas de agua contra la entrada y oviposición de <em>Aedes aegypti</em>, estandarizamos tres tiras rectangulares de $2 \times 10\text{ cm}$ (<strong>papel absorbente, tela de algodón/costal y plástico polimérico</strong>) y sumergimos exactamente $1\text{ cm}$ de su extremo inferior en vasos con agua al mismo nivel.
+        </p>
+
+        <div class="grid-2">
+          <div class="info-card card-river">
+            <h3><i class="fa-solid fa-water" aria-hidden="true"></i> Física del Ascenso Capilar (Ley de Jurin y Washburn)</h3>
+            <p>
+              En materiales fibrosos e hidrofílicos como la celulosa del <strong>papel</strong> y los hilos de la <strong>tela</strong>, las fuerzas de adhesión entre el agua y los microporos superan la cohesión interna del líquido, impulsando una columna de humedad de altura $h(t)$:
+            </p>
+            $$h_{\max} = \frac{2 \gamma \cos\theta}{\rho g r} \qquad \text{y} \qquad h(t) \approx \sqrt{D_{\text{cap}} \cdot t}$$
+            <p style="margin-bottom: 0;">
+              En cambio, el <strong>plástico (polietileno/polipropileno)</strong> carece de poros intercomunicados y presenta un ángulo de contacto hidrofóbico ($\theta &gt; 90^\circ$), resultando en absorción nula ($h = 0.0\text{ cm}$).
+            </p>
+          </div>
+
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-calculator" aria-hidden="true"></i> Estadística Experimental: La Media Aritmética ($\bar{x}$)</h3>
+            <p>
+              Para reducir el error humano de lectura con la regla, cada grupo en Tonga realiza $n = 3$ mediciones repetidas ($x_1, x_2, x_3$) por cada material y calcula su promedio o <strong>media aritmética</strong>:
+            </p>
+            $$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i = \frac{x_1 + x_2 + x_3}{3}$$
+            <p style="margin-bottom: 0;">
+              Con los datos de referencia del prototipo Excel: $\bar{x}_{\text{papel}} = \frac{4.5 + 5.0 + 4.0}{3} = 4.50\text{ cm}$, $\bar{x}_{\text{tela}} = \frac{6.0 + 6.5 + 5.5}{3} = 6.00\text{ cm}$ y $\bar{x}_{\text{plástico}} = \frac{0.0 + 0.0 + 0.0}{3} = 0.00\text{ cm}$.
+            </p>
+          </div>
+        </div>
+
+        <figure style="margin: 1.5rem 0; text-align: center; background: var(--bg-elevated); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <img src="assets/img/esquema_capilaridad_tiras.svg" alt="Esquema técnico del montaje experimental con tres vasos, tiras de 2 por 10 centímetros de papel, tela y plástico sumergidas 1 centímetro y regla graduada" style="max-width: 100%; height: auto; max-height: 310px;">
+          <figcaption style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.65rem;">
+            <strong>Figura 2.1:</strong> Control de variables experimentales: tiras idénticas de $2 \times 10\text{ cm}$, inmersión basal de $1\text{ cm}$ y lectura de ascenso capilar en centímetros.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 3. METÁFORA CONCEPTUAL -->
+      <section class="content-section" id="metafora">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <h2>Metáfora Conceptual: La Jigra Nasa, el Costal Cafetero y la Lona Impermeable</h2>
+        </div>
+
+        <p>
+          ¿Por qué algunas familias tapan sus canecas con una tela o un costal pensando que eso basta? Nuestro diálogo de saberes conecta los objetos cotidianos del Cauca con la física de materiales:
+        </p>
+
+        <div class="grid-3">
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> La Jigra Tejida y el Porcentaje de Poro</h3>
+            <p>
+              La <strong>jigra</strong> cabuyera Nasa es maravillosa para cargar cosecha porque respira y deja pasar el aire. Pero sobre un tanque de agua, los espacios entre fibras dejan entrar a la hembra de <em>Aedes aegypti</em> (que mide apenas $4\text{ a }7\text{ mm}$) y mantienen húmedo el borde.
+            </p>
+          </div>
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-wheat-awn" aria-hidden="true"></i> El Costal de Fique y la Tela</h3>
+            <p>
+              Al igual que la tira de tela en el laboratorio ($\bar{x} = 6.00\text{ cm}$), una tela sobre la alberca absorbe agua por capilaridad, se deteriora rápido y crea un microclima húmedo ideal para que los huevos del mosquito sobrevivan pegados a la pared.
+            </p>
+          </div>
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> El Polímero Impermeable en Tonga</h3>
+            <p>
+              El plástico limpio o lona impermeable reutilizada ($\bar{x} = 0.00\text{ cm}$), bien amarrada con neumático o cuerda al cuello de la caneca, actúa como una barrera física total y duradera.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SIMULADORES INTERACTIVOS Y HOJA DE REGISTRO EXCEL DUA -->
+      <section class="content-section" id="simulador">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <h2>Laboratorio Interactivo 2D, Hoja de Registro DUA y Constructor de Trampas</h2>
+        </div>
+
+        <!-- PARTE A: SIMULADOR FÍSICO 2D DE INMERSIÓN Y CAPILARIDAD -->
+        <div class="sim-panel">
+          <h3><i class="fa-solid fa-stopwatch" aria-hidden="true"></i> A. Simulador Físico 2D de Inmersión y Capilaridad</h3>
+          <p>
+            Elige entre el <strong>Protocolo Rápido de la Tonga en Excel ($30\text{ s}$)</strong> o el <strong>Protocolo Extendido de Aula en PDF ($120\text{ s}$)</strong>. Activa el modo de <strong>Regla Táctil de Alto Contraste DUA</strong> (con relieves simulados cada centímetro para estudiantes con baja visión) y observa el ascenso capilar en vivo:
+          </p>
+
+          <div class="sim-controls-grid" style="align-items: end;">
+            <div class="control-group">
+              <label for="selectProtocoloTiempo">Protocolo Temporal del Experimento:</label>
+              <select id="selectProtocoloTiempo" class="sim-select">
+                <option value="30">30 segundos (Protocolo Tonga · Hoja Excel)</option>
+                <option value="120" selected>120 segundos / 2 min (Protocolo Aula · Guía PDF)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="sliderTiempoInmersion">
+                <span>Tiempo de inmersión transcurrido:</span>
+                <strong id="valTiempoInmersion" class="badge-tech">120 s</strong>
+              </label>
+              <input type="range" id="sliderTiempoInmersion" class="sim-slider" min="0" max="120" step="1" value="120">
+            </div>
+
+            <div class="control-group" style="display: flex; flex-direction: row; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+              <button type="button" id="btnRunCronometro" class="btn-primary">
+                <i class="fa-solid fa-play" aria-hidden="true"></i> Iniciar Cronómetro
+              </button>
+              <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.85rem;">
+                <input type="checkbox" id="toggleReglaTactil">
+                <span>Regla Táctil DUA</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Visualizador de los 3 vasos con tiras -->
+          <div class="beakers-stage" role="region" aria-label="Visualización 2D de las tres tiras sumergidas en agua">
+            <div class="beaker-box">
+              <strong>Tira 1: Papel Absorbente</strong>
+              <div class="strip-track" id="trackPapel" title="Tira de papel de 2x10 cm">
+                <div id="stripPapelFill" class="strip-water-fill" style="height: 45%;"></div>
+              </div>
+              <small>Ascenso: <strong>$4.50\text{ cm}$</strong> (Poroso / Frágil)</small>
+            </div>
+
+            <div class="beaker-box">
+              <strong>Tira 2: Tela / Costal</strong>
+              <div class="strip-track" id="trackTela" title="Tira de tela de 2x10 cm">
+                <div id="stripTelaFill" class="strip-water-fill" style="height: 60%;"></div>
+              </div>
+              <small>Ascenso: <strong>$6.00\text{ cm}$</strong> (Capilaridad Alta)</small>
+            </div>
+
+            <div class="beaker-box">
+              <strong>Tira 3: Plástico Reciclado</strong>
+              <div class="strip-track" id="trackPlastico" title="Tira de plástico de 2x10 cm">
+                <div id="stripPlasticoFill" class="strip-water-fill" style="height: 0%;"></div>
+              </div>
+              <small>Ascenso: <strong>$0.00\text{ cm}$</strong> (Impermeable)</small>
+            </div>
+          </div>
+
+          <!-- Contenedor Anti-CLS Obligatorio -->
+          <div class="canvas-wrapper" style="position: relative; height: 280px; max-width: 680px; margin: 0 auto; width: 100%;">
+            <canvas id="chartCapilaridad" aria-label="Gráfico comparativo de ascenso capilar en papel, tela y plástico"></canvas>
+          </div>
+        </div>
+
+        <!-- PARTE B: HOJA DE REGISTRO EXPERIMENTAL DUA EN VIVO (COLORES DEL EXCEL) -->
+        <div class="sim-panel">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <h3 style="margin: 0;"><i class="fa-solid fa-table" aria-hidden="true"></i> B. Hoja de Registro Experimental DUA en Vivo (Convención Cromática del Excel)</h3>
+            <button type="button" id="btnResetLabExcel" class="btn-secondary">
+              <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Restaurar Datos Oficiales del Excel
+            </button>
+          </div>
+          <p>
+            Siguiendo el sistema de apoyos visuales de la plantilla Excel (<em>1_Registro_Experimental</em>): escribe tus mediciones en las <strong>celdas azules de entrada</strong> y observa cómo las <strong>celdas verdes protegidas</strong> calculan automáticamente la media aritmética $\bar{x} = \frac{x_1+x_2+x_3}{3}$:
+          </p>
+
+          <div class="table-responsive">
+            <table class="stem-table" aria-label="Tabla interactiva de registro experimental de absorción por capilaridad">
+              <thead>
+                <tr>
+                  <th>Material Evaluado ($2 \times 10\text{ cm}$)</th>
+                  <th>Medición $x_1$ ($\text{cm}$) <br><small>[Celda Azul DUA]</small></th>
+                  <th>Medición $x_2$ ($\text{cm}$) <br><small>[Celda Azul DUA]</small></th>
+                  <th>Medición $x_3$ ($\text{cm}$) <br><small>[Celda Azul DUA]</small></th>
+                  <th>Promedio $\bar{x}$ ($\text{cm}$) <br><small>[Fórmula Verde]</small></th>
+                  <th>Conclusión de Impermeabilidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Papel Absorbente</strong></td>
+                  <td class="dua-cell-input">
+                    <input type="number" id="mPapel1" class="lab-input" step="0.1" min="0" max="10" value="4.5" aria-label="Medición 1 Papel en centímetros">
+                  </td>
+                  <td class="dua-cell-input">
+                    <input type="number" id="mPapel2" class="lab-input" step="0.1" min="0" max="10" value="5.0" aria-label="Medición 2 Papel en centímetros">
+                  </td>
+                  <td class="dua-cell-input">
+                    <input type="number" id="mPapel3" class="lab-input" step="0.1" min="0" max="10" value="4.0" aria-label="Medición 3 Papel en centímetros">
+                  </td>
+                  <td id="avgPapel" class="dua-cell-formula">4.50 cm</td>
+                  <td>Alta absorción y baja resistencia húmeda (No apto para tapar tanques)</td>
+                </tr>
+                <tr>
+                  <td><strong>2. Tela / Costal</strong></td>
+                  <td class="dua-cell-input">
+                    <input type="number" id="mTela1" class="lab-input" step="0.1" min="0" max="10" value="6.0" aria-label="Medición 1 Tela en centímetros">
+                  </td>
+                  <td class="dua-cell-input">
+                    <input type="number" id="mTela2" class="lab-input" step="0.1" min="0" max="10" value="6.5" aria-label="Medición 2 Tela en centímetros">
+                  </td>
+                  <td class="dua-cell-input">
+                    <input type="number" id="mTela3" class="lab-input" step="0.1" min="0" max="10" value="5.5" aria-label="Medición 3 Tela en centímetros">
+                  </td>
+                  <td id="avgTela" class="dua-cell-formula">6.00 cm</td>
+                  <td>Máxima capilaridad por fibras (Retiene humedad y permite paso si se destensa)</td>
+                </tr>
+                <tr>
+                  <td><strong>3. Plástico Polimérico</strong></td>
+                  <td class="dua-cell-input">
+                    <input type="number" id="mPlastico1" class="lab-input" step="0.1" min="0" max="10" value="0.0" aria-label="Medición 1 Plástico en centímetros">
+                  </td>
+                  <td class="dua-cell-input">
+                    <input type="number" id="mPlastico2" class="lab-input" step="0.1" min="0" max="10" value="0.0" aria-label="Medición 2 Plástico en centímetros">
+                  </td>
+                  <td class="dua-cell-input">
+                    <input type="number" id="mPlastico3" class="lab-input" step="0.1" min="0" max="10" value="0.0" aria-label="Medición 3 Plástico en centímetros">
+                  </td>
+                  <td id="avgPlastico" class="dua-cell-formula">0.00 cm</td>
+                  <td><strong>100% Impermeable</strong> (Óptimo para cubierta protectora de recipientes)</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4" style="text-align: right;"><strong>Promedio General del Ensayo de Laboratorio ($\bar{X}_{\text{global}}$):</strong></td>
+                  <td id="avgGeneralLab" class="dua-cell-formula">3.50 cm</td>
+                  <td>Referencia de validación estadística del grupo</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <!-- PARTE C: JUEGO CONSTRUCTOR DE CUBIERTA Y TRAMPA -->
+        <div id="trampaBuilder" class="sim-panel">
+          <h3><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> C. Juego Constructor de Cubierta Protectora y Ovitrampa Casera</h3>
+          <p>
+            Aplica tus resultados del laboratorio para diseñar la solución de ingeniería que llevaremos a las viviendas de Guachené y La Unión del Salado:
+          </p>
+
+          <div class="sim-controls-grid">
+            <div class="control-group">
+              <label for="selectMaterialCubierta">1. Material para la Cubierta del Tanque:</label>
+              <select id="selectMaterialCubierta" class="sim-select">
+                <option value="plastico" selected>Plástico grueso reutilizado / Lona impermeable (0.0 cm absorción)</option>
+                <option value="malla">Malla tupida milimétrica (&lt; 1 mm de poro con marco rígido)</option>
+                <option value="tela">Tela de algodón o costal de fique (6.0 cm absorción capilar)</option>
+                <option value="papel">Cartón o papel periódico (4.5 cm absorción, se rompe con lluvia)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="selectAjusteBorde">2. Sistema de Sellado en el Borde:</label>
+              <select id="selectAjusteBorde" class="sim-select">
+                <option value="neumatico" selected>Banda elástica de neumático reciclado o cuerda tensada (Sello hermético)</option>
+                <option value="piedras">Piedras o palos sueltos encima (Quedan rendijas laterales)</option>
+                <option value="suelto">Superpuesto sin amarrar (El viento lo levanta)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="selectTipoTrampa">3. Diseño de Trampa / Control Complementario:</label>
+              <select id="selectTipoTrampa" class="sim-select">
+                <option value="ovitrampa" selected>Ovitrampa escolar con botella PET negra, anillo de malla y vigilancia cada 5 días</option>
+                <option value="cepillado">Cepillado semanal de paredes internas de la alberca en Tonga familiar</option>
+                <option value="ninguno">Sin control de paredes ni vigilancia de posturas</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dua-callout" style="display: flex; flex-direction: column; gap: 0.45rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+              <strong>Eficacia de Bloqueo Vectorial del Prototipo:</strong>
+              <span id="trampaEficaciaScore" class="badge-tech" style="font-size: 1rem;">98% · Barrera Óptima Validada</span>
+            </div>
+            <p id="trampaDiagnosticoText" style="margin: 0;">
+              Excelente decisión de ingeniería: el plástico impermeable ($\bar{x} = 0.00\text{ cm}$) sellado con banda elástica de neumático impide el ingreso de la hembra de <em>Aedes aegypti</em> y evita que el agua lluvia forme charcos por capilaridad.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. DIAGNÓSTICO Y DIFERENCIACIÓN POR GRADOS -->
+      <section class="content-section" id="diagnostico">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <h2>Secuencia de las 7 Operaciones Intelectuales y Diferenciación Multigrado</h2>
+        </div>
+
+        <p>
+          El laboratorio de $120\text{ minutos}$ articula de manera explícita las <strong>7 operaciones intelectuales del ciclo de indagación STEM+A</strong> y adapta la complejidad matemática desde $1.^\circ$ hasta $5.^\circ$ de primaria:
+        </p>
+
+        <div class="table-responsive">
+          <table class="stem-table" aria-label="Adaptación curricular DUA por grados de primero a quinto">
+            <thead>
+              <tr>
+                <th>Grado Escolar</th>
+                <th>Meta en Medición y Estadística</th>
+                <th>Andamiaje DUA en el Laboratorio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Grados $1.^\circ$ y $2.^\circ$</strong></td>
+                <td>Comparación cualitativa y conteo directo en centímetros enteros con regleta coloreada.</td>
+                <td>Pictogramas de gota de agua, cinta métrica táctil y clasificación visual del material ganador.</td>
+              </tr>
+              <tr>
+                <td><strong>Grado $3.^\circ$</strong></td>
+                <td>Registro de las $3$ mediciones en tabla estructurada y suma de longitudes con apoyo de calculadora o ábaco.</td>
+                <td>Tabla DUA con código de colores (azul para anotar, verde para el resultado grupal).</td>
+              </tr>
+              <tr>
+                <td><strong>Grados $4.^\circ$ y $5.^\circ$</strong></td>
+                <td>Medición con decimales ($\text{mm}$), cálculo autónomo de la media aritmética $\bar{x} = \frac{x_1+x_2+x_3}{3}$ y gráfica de barras.</td>
+                <td>Análisis de fuentes de error experimental y justificación física de la impermeabilidad del polímero.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. CUADERNO DE CAMPO Y RECURSOS DESCARGABLES -->
+      <section class="content-section" id="cuaderno">
+        <div class="section-header">
+          <span class="section-number">05</span>
+          <h2>Protocolo Imprimible y Libro de Excel DUA del Proyecto</h2>
+        </div>
+
+        <p>
+          Descarga los instrumentos oficiales de la <strong>Sesión 2</strong> para trabajar en el aula con o sin conectividad a internet:
+        </p>
+
+        <div class="grid-2">
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Guía 02: Protocolo de Laboratorio</h3>
+            <p>
+              Cartilla paso a paso con lista de materiales económicos, instrucciones de seguridad, tabla de registro en blanco e instructivo ilustrado para armar la cubierta y la trampa casera.
+            </p>
+            <a href="assets/guias/Guia_02_Protocolo_Laboratorio_Materiales.pdf" class="btn-download" download>
+              <i class="fa-solid fa-download" aria-hidden="true"></i> Descargar Guía 02 (PDF)
+            </a>
+          </div>
+
+          <div class="info-card card-river">
+            <h3><i class="fa-solid fa-file-excel" aria-hidden="true"></i> Prototipo de Planeación UDL + Excel</h3>
+            <p>
+              Libro original de Excel con las 6 hojas interactivas del proyecto (<em>TOC_y_Sintesis</em>, <em>1_Registro_Experimental</em>, <em>2_Rubrica_Evaluacion</em>, <em>3_Bitacora_Familiar</em>, <em>4_Guia_Didactica</em> y <em>5_Validacion_Fidelidad</em>).
+            </p>
+            <a href="fuentes/prototipo de planeación UDL + PROYECTO Transversal Ciencias Naturales.xlsx" class="btn-secondary" download>
+              <i class="fa-solid fa-table" aria-hidden="true"></i> Descargar Libro Excel DUA (.xlsx)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. EVALUACIÓN FORMATIVA DEL MÓDULO 2 -->
+      <section class="content-section" id="evaluacion">
+        <div class="section-header">
+          <span class="section-number">06</span>
+          <h2>Autoevaluación Científica y Técnica de la Sesión 2</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Criterio: Medición y Datos</h3>
+            <p>
+              Mido con cuidado el ascenso del agua en las tiras de $2 \times 10\text{ cm}$ (usando regla visual o regla táctil DUA) y registro los tres ensayos sin alterar la evidencia.
+            </p>
+          </div>
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Criterio: Conclusión Basada en Pruebas</h3>
+            <p>
+              Demuestro con los promedios ($\bar{x}_{\text{plástico}} = 0.00\text{ cm}$ frente a $\bar{x}_{\text{tela}} = 6.00\text{ cm}$) por qué un material impermeable y bien sellado es indispensable para tapar el agua.
+            </p>
+          </div>
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-hands-helping" aria-hidden="true"></i> Criterio: Trabajo en Tonga</h3>
+            <p>
+              Cumplo mi rol dentro del equipo de laboratorio (cronometrista, medidor, relator o constructor del prototipo) respetando el ritmo de todos mis compañeros.
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--border-color);">
+          <a href="modulo01_teatro_epidemiologico.html" class="btn-secondary">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver al Módulo 1: Teatro en Tonga
+          </a>
+          <a href="modulo03_divulgacion_evaluacion.html" class="btn-primary">
+            Continuar al Módulo 3: Divulgación y Evaluación DUA <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="site-footer">
+          <p>
+            <strong>Proyecto: "Tejiendo saberes para prevenir el dengue"</strong> · IE Técnico San Jacinto (Guachené, Cauca) · Maestría en Educación STEM para el Desarrollo Social — Universidad Santo Tomás (2026).
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+%PDF-1.4
+%ASCII-PDF
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 4227 >>
+stream
+0.725 0.110 0.110 rg 0 776 153 16 re f
+0.851 0.467 0.024 rg 153 776 153 16 re f
+0.082 0.502 0.239 rg 306 776 153 16 re f
+0.243 0.153 0.137 rg 459 776 153 16 re f
+0.15 0.10 0.09 rg 36 695 540 70 re f
+BT /F2 9 Tf 0.96 0.62 0.04 rg 50 747 Td (MODULO 2 - REDES ESTRATEGICAS Y DE RECONOCIMIENTO \(PAUTAS DUA 3.3, 4.1, 6.2\)) Tj ET
+BT /F2 15 Tf 1 1 1 rg 50 726 Td (GUIA PEDAGOGICA 02: LABORATORIO DE MATERIALES Y CUBIERTAS) Tj ET
+BT /F1 10 Tf 0.90 0.85 0.80 rg 50 708 Td (Sesion 2 \(120 min\) | Ciencias, Matematicas, Ingenieria y Tecnologia | Protocolo Experimental) Tj ET
+0.96 0.93 0.88 rg 36 666 540 20 re f
+0.725 0.110 0.110 rg 36 666 5 20 re f
+BT /F2 11 Tf 0.24 0.15 0.14 rg 48 672 Td (1. ESTANDARIZACION DEL EXPERIMENTO DE CAPILARIDAD Y PERMEABILIDAD) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 650 Td (- Materiales por Tonga: 3 tiras de Papel \(2 x 10 cm\), 3 tiras de Tela de algodon \(2 x 10) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 637 Td (cm\), 3 tiras de Plastico PET reciclado \(2 x 10 cm\), recipiente con agua limpia y regla) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 624 Td (   graduada.) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 608 Td (- Condicion invariante: Introducir verticalmente 1 cm de cada tira en el agua durante el) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 595 Td (tiempo estandarizado \(30 segundos en protocolo rapido de Tonga / 2 minutos en protocolo) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 582 Td (   extendido\).) Tj ET
+0.96 0.93 0.88 rg 36 552 540 20 re f
+0.725 0.110 0.110 rg 36 552 5 20 re f
+BT /F2 11 Tf 0.24 0.15 0.14 rg 48 558 Td (2. ROLES DE LABORATORIO EN LA TONGA) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 536 Td (- Observador / Cronometrador: Controla con exactitud el tiempo de inmersion y la profundidad) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 523 Td (de 1 cm.) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 507 Td (- Medidor de Avance: Utiliza la regla graduada \(estandar o tactil de alto contraste\) para) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 494 Td (medir el ascenso de humedad en cm.) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 478 Td (- Registrador de Datos: Anota las 9 mediciones en la tabla \(celdas azules\) y verifica el) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 465 Td (calculo de los 3 promedios \(celdas verdes\).) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 449 Td (- Vocero / Ingeniero de Cubierta: Lidera la justificacion tecnica de la cubierta o trampa) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 436 Td (sin aberturas visibles.) Tj ET
+0.96 0.93 0.88 rg 36 406 540 20 re f
+0.725 0.110 0.110 rg 36 406 5 20 re f
+BT /F2 11 Tf 0.24 0.15 0.14 rg 48 412 Td (3. TABLA DE REFERENCIA Y FORMULA MATEMATICA DE LA MEDIA) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 390 Td (- Formula aplicada por material: Media = \(Muestra 1 + Muestra 2 + Muestra 3\) / 3.) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 374 Td (- Datos de referencia \(Excel\): Papel [4.5, 5.0, 4.0 cm -> Media = 4.5 cm \(Permeable\)] | Tela) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 361 Td ([6.0, 6.5, 5.5 cm -> Media = 6.0 cm \(Muy absorbente\)] | Plastico PET [0.0, 0.0, 0.0 cm ->) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 348 Td (Media = 0.0 cm \(Impermeable\)].) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 332 Td (- Promedio general de absorcion: 3.5 cm. Conclusion de ingenieria: El plastico PET \(0 cm\)) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 319 Td (bloquea el paso de humedad y sellado exterior.) Tj ET
+0.96 0.93 0.88 rg 36 289 540 20 re f
+0.725 0.110 0.110 rg 36 289 5 20 re f
+BT /F2 11 Tf 0.24 0.15 0.14 rg 48 295 Td (4. PROTOTIPADO DE CUBIERTA HERMETICA Y TRAMPAS DE CONTROL) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 273 Td (- Diseno de cubierta ajustada al borde del recipiente sin aberturas visibles, complementada) Tj ET
+BT /F1 9.5 Tf 0.18 0.16 0.15 rg 46 260 Td (con prototipo de trampa fisica, visual o acustica.) Tj ET
+0.85 0.80 0.75 RG 1 w 36 46 m 576 46 l S
+BT /F1 8 Tf 0.40 0.35 0.32 rg 36 32 Td (Universidad Santo Tomas - Maestria en Educacion STEM para el Desarrollo Social | IE Tecnico San Jacinto, Guachene, Cauca (2026)) Tj ET
+BT /F2 8 Tf 0.725 0.110 0.110 rg 36 20 Td (Identidad Intercultural: Pueblo Indigena Nasa + Cultura Afro Union del Salado / Guachene (Tonga & Ubuntu) + Cultura Cafetera) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000354 00000 n 
+0000000456 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4735
+%%EOF

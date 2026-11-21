@@ -1,0 +1,817 @@
+/* ==========================================================================
+   SISTEMA DE DISEÑO INTERCULTURAL: NASA + AFRO UNIÓN DEL SALADO + CAFETERO
+   Proyecto: "Tejiendo saberes para prevenir el dengue" (STEM+A · DUA · PEA)
+   Universidad Santo Tomás — Maestría en Educación STEM para el Desarrollo Social
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap');
+
+:root {
+  /* 1. PALETA TRI-ÉTNICA Y TERRITORIAL (ESCALA CROMÁTICA EXTENDIDA WCAG AA/AAA) */
+  /* Pueblo Indígena Nasa (Chumbe, Jigra y Uma Kiwe) */
+  --nasa-crimson: #b91c1c;
+  --nasa-crimson-light: #ef4444;
+  --nasa-emerald: #15803d;
+  --nasa-emerald-light: #22c55e;
+  --nasa-surface: rgba(185, 28, 28, 0.06);
+  --nasa-border: rgba(185, 28, 28, 0.28);
+  --nasa-ink: #7f1d1d;
+
+  /* Cultura Afrodescendiente (La Unión del Salado & Guachené — Tonga & Ubuntu) */
+  --afro-gold: #d97706;
+  --afro-gold-bright: #f59e0b;
+  --afro-river: #0284c7;
+  --afro-river-light: #38bdf8;
+  --afro-surface: rgba(217, 119, 6, 0.08);
+  --afro-border: rgba(217, 119, 6, 0.34);
+  --afro-ink: #78350f;
+  --river-surface: rgba(2, 132, 199, 0.07);
+  --river-border: rgba(2, 132, 199, 0.32);
+  --river-ink: #0c4a6e;
+
+  /* Cultura Cafetera (Montaña, Pergamino, Guayacán y Cereza de Café) */
+  --cafe-roast: #271815;
+  --cafe-bark: #3e2723;
+  --cafe-parchment: #faf6f0;
+  --cafe-parchment-alt: #f2ebe1;
+  --cafe-cherry: #991b1b;
+  --cafe-guayacan: #ca8a04;
+  --cafe-surface: rgba(21, 128, 61, 0.07);
+  --cafe-border: rgba(21, 128, 61, 0.30);
+  --cafe-ink: #14532d;
+
+  /* 2. TOKENS SEMÁNTICOS DE TEMA (MODO CLARO: PERGAMINO CAFETERO POR DEFECTO) */
+  --bg-main: #faf6f0;
+  --bg-card: #ffffff;
+  --bg-elevated: #f3ece1;
+  --bg-sidebar: #231512;
+  --bg-header: #1c110e;
+  --border-color: #decbb7;
+
+  --text-primary: #231512;
+  --text-secondary: #4a352f;
+  --text-muted: #785f56;
+  --text-on-dark: #fdf8f2;
+
+  /* Tokens requeridos por .agents/skills/ml-html-module-architect */
+  --accent-primary: #b91c1c;
+  --accent-secondary: #d97706;
+  --color-danger: #d90429;
+  --color-success: #15803d;
+
+  /* 3. CONVENCIONES CROMÁTICAS DUA DEL EXCEL (TOC_y_Sintesis) */
+  --dua-input-bg: rgba(2, 132, 199, 0.13);
+  --dua-input-border: #0284c7;
+  --dua-formula-bg: rgba(21, 128, 61, 0.15);
+  --dua-formula-border: #15803d;
+  --dua-zebra-bg: rgba(120, 95, 86, 0.06);
+  --dua-attention-bg: rgba(245, 158, 11, 0.18);
+  --dua-attention-border: #d97706;
+
+  --shadow-soft: 0 6px 24px rgba(35, 21, 18, 0.08);
+  --shadow-card: 0 4px 14px rgba(35, 21, 18, 0.06);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+/* MODO OSCURO INTERCULTURAL: NOCHE DE TAMBORES, CHUMBE Y CAFETAL */
+body.dark-theme {
+  --bg-main: #160f0d;
+  --bg-card: #221714;
+  --bg-elevated: #2d1f1b;
+  --bg-sidebar: #110b09;
+  --bg-header: #0d0807;
+  --border-color: #442f29;
+
+  --text-primary: #f7efe6;
+  --text-secondary: #dfd0c3;
+  --text-muted: #ab9588;
+
+  --accent-primary: #f59e0b;
+  --accent-secondary: #ef4444;
+
+  --dua-input-bg: rgba(56, 189, 248, 0.16);
+  --dua-formula-bg: rgba(34, 197, 94, 0.18);
+  --dua-zebra-bg: rgba(255, 255, 255, 0.04);
+  --dua-attention-bg: rgba(245, 158, 11, 0.22);
+
+  --nasa-surface: rgba(239, 68, 68, 0.12);
+  --nasa-border: rgba(239, 68, 68, 0.42);
+  --nasa-ink: #fecaca;
+  --afro-surface: rgba(245, 158, 11, 0.12);
+  --afro-border: rgba(245, 158, 11, 0.45);
+  --afro-ink: #fde68a;
+  --river-surface: rgba(56, 189, 248, 0.12);
+  --river-border: rgba(56, 189, 248, 0.42);
+  --river-ink: #bae6fd;
+  --cafe-surface: rgba(34, 197, 94, 0.12);
+  --cafe-border: rgba(34, 197, 94, 0.42);
+  --cafe-ink: #bbf7d0;
+}
+
+/* MODO ACCESIBILIDAD DUA: LETRA AMPLIADA (MACROTIPO) */
+body.dua-large-text {
+  font-size: 19px !important;
+  line-height: 1.8 !important;
+}
+body.dua-large-text h1 { font-size: 2.5rem !important; }
+body.dua-large-text h2 { font-size: 1.95rem !important; }
+body.dua-large-text p, body.dua-large-text li, body.dua-large-text td {
+  font-size: 1.15rem !important;
+}
+
+/* MODO ACCESIBILIDAD DUA: ALTO CONTRASTE Y REGLA TÁCTIL */
+body.dua-high-contrast {
+  --bg-main: #000000 !important;
+  --bg-card: #0a0a0a !important;
+  --bg-elevated: #141414 !important;
+  --border-color: #ffff00 !important;
+  --text-primary: #ffffff !important;
+  --text-secondary: #ffff88 !important;
+  --accent-primary: #ffff00 !important;
+  --accent-secondary: #00ffff !important;
+}
+
+/* RESET Y BASE */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4, .brand-logo, .sidebar-category {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* FRANJA GEOMÉTRICA SUPERIOR (CHUMBE NASA + SOL AFRO + MONTAÑA CAFETERA) */
+.chumbe-ribbon {
+  height: 7px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--nasa-crimson) 0px,
+    var(--nasa-crimson) 45px,
+    var(--afro-gold-bright) 45px,
+    var(--afro-gold-bright) 90px,
+    var(--nasa-emerald) 90px,
+    var(--nasa-emerald) 135px,
+    var(--afro-river) 135px,
+    var(--afro-river) 180px,
+    var(--cafe-bark) 180px,
+    var(--cafe-bark) 225px
+  );
+}
+
+/* 1. CABECERA SUPERIOR (TOP HEADER) */
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-header);
+  color: var(--text-on-dark);
+  border-bottom: 3px solid var(--afro-gold);
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.brand-logo i {
+  color: var(--afro-gold-bright);
+  font-size: 1.35rem;
+}
+
+.badge-tech {
+  background: linear-gradient(135deg, var(--nasa-crimson), var(--afro-gold));
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn-dua-tool, .btn-theme-toggle, .btn-colab-nav {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: var(--radius-sm);
+  padding: 0.42rem 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-dua-tool:hover, .btn-theme-toggle:hover, .btn-colab-nav:hover {
+  background: var(--afro-gold);
+  color: #111111;
+  border-color: #ffffff;
+}
+
+.btn-dua-tool.active {
+  background: var(--nasa-emerald);
+  border-color: #86efac;
+  color: #ffffff;
+}
+
+/* 2. LAYOUT PRINCIPAL */
+.layout-wrapper {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+@media (max-width: 960px) {
+  .layout-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2A. MENÚ LATERAL FIJO (SIDEBAR) */
+.sidebar {
+  background-color: var(--bg-sidebar);
+  color: var(--text-on-dark);
+  padding: 1.4rem 1rem;
+  border-right: 2px solid rgba(217, 119, 6, 0.3);
+}
+
+.sidebar-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--afro-gold-bright);
+  margin: 1.25rem 0 0.5rem 0.5rem;
+}
+
+.sidebar-category:first-child {
+  margin-top: 0;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 0.35rem;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.62rem 0.85rem;
+  border-radius: var(--radius-sm);
+  color: #e7ddd6;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-menu a:hover {
+  background-color: rgba(245, 158, 11, 0.14);
+  color: #ffffff;
+  border-left-color: var(--afro-gold-bright);
+}
+
+.sidebar-menu a.active {
+  background: linear-gradient(90deg, rgba(185, 28, 28, 0.4), rgba(217, 119, 6, 0.2));
+  color: #ffffff;
+  font-weight: 700;
+  border-left-color: var(--afro-gold-bright);
+}
+
+/* 2B. LIENZO DE CONTENIDO PRINCIPAL (LÍMITE ERGONÓMICO 900PX) */
+.main-content {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.75rem 4rem;
+}
+
+/* HERO SECTION */
+.module-hero {
+  background: linear-gradient(135deg, #271815 0%, #7f1d1d 48%, #14532d 100%);
+  color: #ffffff;
+  padding: 2.2rem 2rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-soft);
+  border: 2px solid rgba(245, 158, 11, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.badge-stage, .badge-culture {
+  font-size: 0.73rem;
+  font-weight: 700;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-stage {
+  background: rgba(245, 158, 11, 0.25);
+  color: #fde68a;
+  border: 1px solid #f59e0b;
+}
+
+.badge-culture.nasa { background: rgba(185, 28, 28, 0.85); color: #fff; }
+.badge-culture.afro { background: rgba(217, 119, 6, 0.9); color: #111; }
+.badge-culture.cafe { background: rgba(21, 128, 61, 0.88); color: #fff; }
+
+.module-hero h1 {
+  font-size: 2rem;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+}
+
+.module-hero p {
+  color: #f3e8dd;
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+
+.hero-figure {
+  margin: 1.25rem 0 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  max-height: 300px;
+}
+
+.hero-figure img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* SECCIONES CANÓNICAS */
+.content-section {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem;
+  margin-bottom: 1.85rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.content-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: linear-gradient(90deg, var(--nasa-crimson), var(--afro-gold-bright), var(--nasa-emerald), var(--afro-river));
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.section-number {
+  background: linear-gradient(135deg, var(--nasa-crimson), var(--afro-gold));
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.content-section h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+}
+
+/* GRID Y TARJETAS INTERCULTURALES / DUA */
+.grid-2, .grid-3, .grid-4 {
+  display: grid;
+  gap: 1.1rem;
+  margin: 1.1rem 0;
+}
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); }
+
+.info-card {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-nasa {
+  background: linear-gradient(180deg, var(--nasa-surface), var(--bg-elevated));
+  border: 1px solid var(--nasa-border);
+  border-top: 4px solid var(--nasa-crimson);
+}
+.card-afro {
+  background: linear-gradient(180deg, var(--afro-surface), var(--bg-elevated));
+  border: 1px solid var(--afro-border);
+  border-top: 4px solid var(--afro-gold-bright);
+}
+.card-cafe {
+  background: linear-gradient(180deg, var(--cafe-surface), var(--bg-elevated));
+  border: 1px solid var(--cafe-border);
+  border-top: 4px solid var(--nasa-emerald);
+}
+.card-river {
+  background: linear-gradient(180deg, var(--river-surface), var(--bg-elevated));
+  border: 1px solid var(--river-border);
+  border-top: 4px solid var(--afro-river);
+}
+
+/* CONVENCIONES CROMÁTICAS DUA DEL EXCEL */
+.dua-cell-input, .lab-input-cell {
+  background-color: var(--dua-input-bg) !important;
+  border: 1.5px solid var(--dua-input-border) !important;
+}
+
+.dua-cell-formula, .lab-formula-cell {
+  background-color: var(--dua-formula-bg) !important;
+  border: 1.5px solid var(--dua-formula-border) !important;
+  font-weight: 700;
+}
+
+.dua-cell-attention, .dua-callout {
+  background-color: var(--dua-attention-bg) !important;
+  border-left: 5px solid var(--dua-attention-border) !important;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  margin: 1rem 0;
+}
+
+/* TABLAS CIENTÍFICAS Y DE LABORATORIO */
+.table-responsive {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.stem-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.stem-table th, .stem-table td {
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.stem-table thead th {
+  background-color: var(--cafe-bark);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
+.stem-table tbody tr:nth-child(even) {
+  background-color: var(--dua-zebra-bg);
+}
+
+.lab-input {
+  width: 78px;
+  padding: 0.38rem 0.5rem;
+  border: 2px solid var(--afro-river);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* CONTENEDOR ANTI-CLS DE CHART.JS (REGLA INNEGOCIABLE .agents) */
+.canvas-wrapper {
+  position: relative;
+  height: 280px;
+  max-width: 680px;
+  margin: 1rem auto;
+  width: 100%;
+  background: var(--bg-elevated);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+/* SIMULADORES Y CONTROLES INTERACTIVOS */
+.sim-panel {
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  margin: 1.2rem 0;
+}
+
+.sim-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.control-group label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sim-slider {
+  width: 100%;
+  accent-color: var(--nasa-crimson);
+  cursor: pointer;
+}
+
+.sim-select, .sim-input-text {
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+.btn-primary, .btn-secondary, .btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-sm);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--nasa-crimson), var(--afro-gold));
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--afro-river);
+  color: #ffffff;
+}
+
+.btn-download {
+  background: var(--nasa-emerald);
+  color: #ffffff;
+}
+
+/* PESTAÑAS DE GRADOS (1.º A 5.º) Y STEPPER DE 7 OPERACIONES */
+.tabs-bar, .stepper-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.grado-tab-btn, .op-step-btn {
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.grado-tab-btn.active, .op-step-btn.active {
+  background: var(--nasa-crimson);
+  color: #ffffff;
+  border-color: var(--afro-gold-bright);
+}
+
+/* VISUALIZADOR DE TIRAS DE CAPILARIDAD */
+.beakers-stage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.beaker-box {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  position: relative;
+}
+
+.strip-track {
+  width: 38px;
+  height: 150px;
+  margin: 0.5rem auto;
+  background: #e5e0d8;
+  border: 2px solid #78716c;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.strip-track.tactile-ruler {
+  border: 3px dashed #eab308;
+  background-image: repeating-linear-gradient(
+    to top,
+    rgba(0,0,0,0.28) 0px,
+    rgba(0,0,0,0.28) 2px,
+    transparent 2px,
+    transparent 15px
+  );
+}
+
+.strip-water-fill {
+  width: 100%;
+  background: linear-gradient(180deg, #38bdf8, #0284c7);
+  transition: height 0.25s ease;
+}
+
+/* PIE DE PÁGINA */
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-color);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ==========================================================================
+   MODELO DE INFOGRAFÍA INTERACTIVA Y ALEATORIA DUA (MÓDULO 3)
+   ========================================================================== */
+.infografia-poster {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+  margin-top: 0.75rem;
+  transition: all 0.25s ease;
+}
+
+.infografia-poster.theme-afro {
+  border-color: var(--afro-gold-bright);
+}
+.infografia-poster.theme-nasa {
+  border-color: var(--nasa-crimson);
+}
+.infografia-poster.theme-cafetera {
+  border-color: var(--nasa-emerald);
+}
+
+.infografia-banner {
+  padding: 1.25rem 1.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.infografia-poster.theme-afro .infografia-banner {
+  background: linear-gradient(135deg, #1c1917 0%, #b45309 52%, #0284c7 100%);
+}
+.infografia-poster.theme-nasa .infografia-banner {
+  background: linear-gradient(135deg, #450a0a 0%, #b91c1c 52%, #15803d 100%);
+}
+.infografia-poster.theme-cafetera .infografia-banner {
+  background: linear-gradient(135deg, #271815 0%, #15803d 52%, #991b1b 100%);
+}
+
+.infografia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.infografia-quadrant {
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  position: relative;
+}
+
+.infografia-quadrant h5 {
+  margin: 0 0 0.5rem 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.infografia-svg-stage {
+  padding: 0 1.25rem 1rem;
+}
+
+.infografia-footer-bar {
+  padding: 0.85rem 1.25rem;
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.84rem;
+}
+

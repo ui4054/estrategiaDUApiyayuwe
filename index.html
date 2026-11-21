@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tejiendo Saberes para Prevenir el Dengue — Estrategia Pedagógica STEM+A, DUA y PEA</title>
+
+  <!-- Sistema de Diseño Intercultural: Nasa + Afro Unión del Salado/Guachené + Cultura Cafetera -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Iconografía FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Motor Matemático KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Motor de Gráficas Reactivas Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Controladores Interactivos y Simuladores -->
+  <script defer src="js/app.js"></script>
+  <script defer src="js/simulators.js"></script>
+</head>
+<body>
+
+  <!-- Franja Geométrica del Chumbe Nasa, Sol Afro y Montaña Cafetera -->
+  <div class="chumbe-ribbon" aria-hidden="true"></div>
+
+  <!-- 1. Cabecera Superior con Barra de Accesibilidad DUA -->
+  <header class="top-header">
+    <div class="brand-logo">
+      <a href="index.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:10px;">
+        <i class="fa-solid fa-hands-holding-circle"></i>
+        <span>Tejiendo Saberes · STEM+A &amp; DUA</span>
+      </a>
+      <span class="badge-tech">IE Técnico San Jacinto · Cauca</span>
+    </div>
+
+    <div class="top-actions" role="toolbar" aria-label="Herramientas de Accesibilidad Universal DUA">
+      <button id="btnFontIncrease" class="btn-dua-tool" title="Activar Letra Ampliada (Macrotipo DUA)">
+        <i class="fa-solid fa-text-height"></i> <span>Macrotipo</span>
+      </button>
+      <button id="btnHighContrast" class="btn-dua-tool" title="Activar Alto Contraste y Regla Táctil DUA">
+        <i class="fa-solid fa-circle-half-stroke"></i> <span>Alto Contraste</span>
+      </button>
+      <button id="btnReadAloud" class="btn-dua-tool" title="Escuchar Lectura en Voz Alta (Pauta DUA 1.2)">
+        <i class="fa-solid fa-volume-high"></i> <span>Escuchar</span>
+      </button>
+      <button id="themeToggleBtn" class="btn-theme-toggle" title="Cambiar entre Tema Pergamino Cafetero y Noche de Tambores">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. Layout Principal con Menú Lateral Fijo y Lienzo de 7 Secciones -->
+  <div class="layout-wrapper">
+
+    <!-- 2A. Menú Lateral Fijo (Sidebar) -->
+    <aside class="sidebar" aria-label="Navegación de Módulos y Guías">
+      <div class="sidebar-category">ESTRATEGIA PEDAGÓGICA</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html" class="active"><i class="fa-solid fa-compass"></i> Landing Page &amp; Marco DUA</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-category">MÓDULOS INTERACTIVOS (4.º GRADO)</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="modulo01_teatro_epidemiologico.html"><i class="fa-solid fa-masks-theater"></i> 01. Teatro Epidemiológico</a>
+        </li>
+        <li>
+          <a href="modulo02_laboratorio_materiales.html"><i class="fa-solid fa-flask-vial"></i> 02. Laboratorio &amp; Cubiertas</a>
+        </li>
+        <li>
+          <a href="modulo03_divulgacion_evaluacion.html"><i class="fa-solid fa-drum"></i> 03. Divulgación &amp; Rúbrica DUA</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-category">GUÍAS PEDAGÓGICAS PDF</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="assets/guias/Guia_01_Teatro_Epidemiologico_Tonga.pdf" download><i class="fa-solid fa-file-pdf"></i> Guía 01: Teatro en Tonga</a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_02_Protocolo_Laboratorio_Materiales.pdf" download><i class="fa-solid fa-file-pdf"></i> Guía 02: Protocolo Lab</a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_03_Divulgacion_Familiar_y_Coplas.pdf" download><i class="fa-solid fa-file-pdf"></i> Guía 03: Coplas &amp; Familia</a>
+        </li>
+        <li>
+          <a href="assets/guias/Guia_04_Rubrica_Formativa_DUA_Docente.pdf" download><i class="fa-solid fa-file-pdf"></i> Guía 04: Rúbrica &amp; 7 Op.</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-category">FUENTES MAESTRAS</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="fuentes/Estrategia DUA -Maestría Stem.pdf" download><i class="fa-solid fa-book-open"></i> Documento Maestro PDF</a>
+        </li>
+        <li>
+          <a href="fuentes/prototipo de planeación UDL + PROYECTO Transversal Ciencias Naturales.xlsx" download><i class="fa-solid fa-file-excel"></i> Matriz Maestra Excel</a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- 2B. Lienzo Principal Estructurado en las 7 Secciones Canónicas (.agents) -->
+    <main class="main-content">
+
+      <!-- 01. HERO SECTION & METADATOS -->
+      <header class="module-hero">
+        <div class="hero-badges">
+          <span class="badge-stage">MAESTRÍA EN EDUCACIÓN STEM PARA EL DESARROLLO SOCIAL · USTA (2026)</span>
+          <span class="badge-culture nasa">Pueblo Indígena Nasa</span>
+          <span class="badge-culture afro">Afro Unión del Salado &amp; Guachené</span>
+          <span class="badge-culture cafe">Cultura Cafetera</span>
+        </div>
+
+        <h1>Estrategia Educativa para la Inclusión y la Equidad: «Tejiendo Saberes para Prevenir el Dengue»</h1>
+        <p>
+          Propuesta de intervención pedagógica para estudiantes de <strong>cuarto grado de básica primaria</strong> de la
+          <strong>Institución Educativa Técnico San Jacinto</strong> (zona rural de Guachené, Cauca), articulando el
+          <strong>Diseño Universal para el Aprendizaje (DUA · CAST 2024)</strong>, el enfoque <strong>STEM+A</strong> y el
+          <strong>Proyecto Etnoeducativo Afrocaucano (PEA)</strong> en diálogo intercultural con la herencia indígena Nasa y la tradición cafetera.
+        </p>
+
+        <div class="dua-callout" style="background: rgba(255, 255, 255, 0.14) !important; border-left-color: #fde047 !important; color: #ffffff;">
+          <strong><i class="fa-solid fa-circle-question"></i> PREGUNTA ORIENTADORA CENTRAL:</strong><br>
+          <em>«¿Cómo podemos explicar a nuestras familias la transmisión del dengue y recomendar acciones para reducir los criaderos en recipientes con agua?»</em>
+        </div>
+
+        <div class="grid-2" style="margin-top: 1rem; font-size: 0.88rem; background: rgba(0,0,0,0.28); padding: 0.9rem 1.1rem; border-radius: 10px;">
+          <div>
+            <strong><i class="fa-solid fa-user-graduate"></i> Equipo Investigador (Autores):</strong><br>
+            Laura Leandra Bernal Caicedo · Silvia Marcela Martínez Pérez · Sandra Jimena Vásquez Marroquín · Miguel Alfonso Martínez
+          </div>
+          <div>
+            <strong><i class="fa-solid fa-chalkboard-user"></i> Dirección Académica:</strong><br>
+            Docente Julio Cesar Bermúdez Restrepo · Universidad Santo Tomás · Facultad de Educación
+          </div>
+        </div>
+
+        <figure class="hero-figure">
+          <img src="assets/img/hero_intercultural.jpg" alt="Estudiantes trabajando en Tonga alrededor del cuidado del agua con identidad Nasa, Afro y Cafetera">
+        </figure>
+      </header>
+
+      <!-- 02. FUNDAMENTACIÓN MATEMÁTICA, EPIDEMIOLÓGICA Y PEDAGÓGICA FORMAL -->
+      <section class="content-section" id="fundamentacion">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <h2>Fundamentación Pedagógica, Científica y Tri-Étnica</h2>
+        </div>
+
+        <p>
+          El cuidado del agua almacenada en los hogares rurales constituye la situación de aprendizaje elegida para transformar la instrucción teórica pasiva en una <strong>investigación escolar activa</strong>. La estrategia integra las cinco dimensiones de <strong>STEM+A</strong> con los tres principios neuroeducativos del <strong>Diseño Universal para el Aprendizaje (DUA)</strong>:
+        </p>
+
+        <div class="grid-3">
+          <article class="info-card card-afro">
+            <h3><i class="fa-solid fa-heart-pulse" style="color: var(--afro-gold);"></i> 1. Compromiso (Redes Afectivas)</h3>
+            <p>
+              <strong>Participar y decidir (El porqué):</strong> Permite acordar y alternar responsabilidades dentro de la <em>Tonga</em> y elegir libremente cómo comunicar el mensaje preventivo a las familias del territorio (Pautas DUA 7.2 y 8.3).
+            </p>
+          </article>
+
+          <article class="info-card card-river">
+            <h3><i class="fa-solid fa-eye" style="color: var(--afro-river);"></i> 2. Representación (Reconocimiento)</h3>
+            <p>
+              <strong>Comprender (El qué):</strong> Contempla explicaciones orales, ilustraciones, dramatizaciones, letra ampliada (macrotipo), reglas graduadas táctiles de alto contraste y lectura en relieve <em>Braille</em> cuando se requiera (Pautas DUA 1.2 y 1.3).
+            </p>
+          </article>
+
+          <article class="info-card card-cafe">
+            <h3><i class="fa-solid fa-gears" style="color: var(--nasa-emerald);"></i> 3. Acción y Expresión (Estratégicas)</h3>
+            <p>
+              <strong>Demostrar (El cómo):</strong> Ofrece múltiples medios para explicar con teatro, narraciones o pictogramas, registrar mediciones, calcular promedios y divulgar con criterios científicos comunes (Pautas DUA 4.1, 5.1 y 6.2).
+            </p>
+          </article>
+        </div>
+
+        <p>
+          Desde la dimensión cuantitativa y experimental, el estudiante de 4.º grado modela la absorción capilar en tres materiales cotidianos ($M \in \{\text{Papel}, \text{Tela}, \text{Plástico PET}\}$) usando tiras estandarizadas de $2 \times 10\text{ cm}$ sumergidas $1\text{ cm}$ y sintetiza tres réplicas experimentales ($n = 3$) mediante el estimador insesgado de la <strong>media muestral</strong>:
+        </p>
+
+        $$\bar{x}_M = \frac{1}{n} \sum_{i=1}^{n} x_{M,i} = \frac{x_{M,1} + x_{M,2} + x_{M,3}}{3}$$
+
+        <figure style="margin: 1.2rem 0 0;">
+          <img src="assets/img/mapa_intercultural_trietnico.svg" alt="Mapa de articulación intercultural: Pueblo Indígena Nasa, Cultura Afro de La Unión del Salado y Guachené, y Cultura Cafetera" style="width:100%; border-radius:12px;">
+        </figure>
+      </section>
+
+      <!-- 03. METÁFORA CONCEPTUAL INTUITIVA: TONGA, UBUNTU Y TEJIDO INTERCULTURAL -->
+      <section class="content-section" id="metafora">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <h2>Metáfora Intercultural: La Tonga, el Chumbe Nasa y el Cafetal</h2>
+        </div>
+
+        <p>
+          El Proyecto Etnoeducativo Afrocaucano (PEA) incorpora la <strong>Tonga Etnoeducativa «Hilando pensamiento y tejiendo historia»</strong>, que vincula el aprender haciendo, la tradición oral y la ciencia escolar bajo la filosofía africana <strong>Ubuntu</strong> (<em>«Yo soy porque nosotros somos»</em>). En esta plataforma, dicho tejido abraza tres raíces del suroccidente y centro de Colombia:
+        </p>
+
+        <div class="grid-3">
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-diamond" style="color: var(--nasa-crimson);"></i> Tejido Indígena Nasa</h3>
+            <p>
+              Representado en el <strong>Rojo Chumbe</strong> y el <strong>Verde Montaña</strong>: la geometría del tejido enseña que cada hilo (Ciencias, Matemáticas, Ingeniería, Artes y Saberes Ancestrales) sostiene la defensa de la vida y de <em>Uma Kiwe</em> (la Madre Tierra).
+            </p>
+          </div>
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-drum" style="color: var(--afro-gold);"></i> Afro Unión del Salado &amp; Guachené</h3>
+            <p>
+              Representado en el <strong>Oro Solar Ubuntu</strong> y el <strong>Azul del Río</strong>: la solidaridad de las cuadrillas comunitarias (<em>Tongas</em> de 4 integrantes), el ritmo de la marimba y las coplas orales para proteger la salud colectiva.
+            </p>
+          </div>
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-mug-hot" style="color: var(--cafe-bark);"></i> Cultura Cafetera Campesina</h3>
+            <p>
+              Representado en el <strong>Café Tostado</strong>, el <strong>Pergamino</strong> y la <strong>Cereza Madura</strong>: el cuidado riguroso de los tanques de agua en la finca, la observación paciente del clima y la conversación familiar alrededor del hogar.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem;"><i class="fa-solid fa-users-gear"></i> Organización Cooperativa de la Tonga (Haz clic en cada rol para explorar sus misiones DUA)</h3>
+        <div class="grid-4" id="tongaRoleSelector">
+          <div class="info-card card-afro tonga-role-card" data-role="observador" tabindex="0" style="cursor:pointer;">
+            <h4><i class="fa-solid fa-stopwatch"></i> 1. Observador / Cronometrador</h4>
+            <p style="font-size:0.86rem;">Controla el tiempo exacto de inmersión ($30\text{ s}$ / $120\text{ s}$) y coordina los turnos de escena.</p>
+          </div>
+          <div class="info-card card-river tonga-role-card" data-role="medidor" tabindex="0" style="cursor:pointer;">
+            <h4><i class="fa-solid fa-ruler-vertical"></i> 2. Medidor de Avance</h4>
+            <p style="font-size:0.86rem;">Mide en centímetros ($\text{cm}$) el ascenso de humedad con regla estándar o táctil de alto contraste.</p>
+          </div>
+          <div class="info-card card-cafe tonga-role-card" data-role="registrador" tabindex="0" style="cursor:pointer;">
+            <h4><i class="fa-solid fa-table-list"></i> 3. Registrador de Datos</h4>
+            <p style="font-size:0.86rem;">Anota las $9$ mediciones en la hoja de registro y comprueba el cálculo de los $3$ promedios.</p>
+          </div>
+          <div class="info-card card-nasa tonga-role-card" data-role="vocero" tabindex="0" style="cursor:pointer;">
+            <h4><i class="fa-solid fa-bullhorn"></i> 4. Vocero / Comunicador</h4>
+            <p style="font-size:0.86rem;">Lidera la socialización del prototipo de cubierta/trampa y el mensaje o copla comunitaria.</p>
+          </div>
+        </div>
+        <div id="tongaRoleDetail" class="dua-callout" aria-live="polite">
+          <strong><i class="fa-solid fa-hand-pointer"></i> Rotación Equitativa Ubuntu:</strong> Selecciona cualquiera de los 4 roles de la Tonga arriba para inspeccionar sus responsabilidades específicas en la Sesión 1 (Teatro), Sesión 2 (Laboratorio) y Sesión 3 (Divulgación), junto con sus ajustes razonables DUA.
+        </div>
+      </section>
+
+      <!-- 04. SIMULADOR CURRICULAR INTERACTIVO: MATRIZ 1.º A 5.º GRADO Y RUTA DE 7 OPERACIONES -->
+      <section class="content-section" id="simulador">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <h2>Explorador Curricular Interactivo (Matriz Maestra Excel DUA + STEMA-PEA)</h2>
+        </div>
+
+        <p>
+          Explora de manera interactiva el <strong>Panorama Curricular de 1.º a 5.º Grado</strong> (Hoja 2 del Excel: <code>Matriz_General_1a5_Grados</code>) y la <strong>Ruta de 7 Operaciones de Planeación</strong> (Hoja 4: <code>Ruta_7_Operaciones_4G</code>):
+        </p>
+
+        <!-- Componente A: Explorador de 1.º a 5.º Grado -->
+        <div class="sim-panel">
+          <h3 style="margin-top:0;"><i class="fa-solid fa-layer-group"></i> A. Panorama Curricular Articulado (1.º a 5.º Grado de Primaria)</h3>
+          <div class="tabs-bar" id="gradosTabs" role="tablist">
+            <button class="grado-tab-btn" data-grado="1" role="tab">1.º Grado</button>
+            <button class="grado-tab-btn" data-grado="2" role="tab">2.º Grado</button>
+            <button class="grado-tab-btn" data-grado="3" role="tab">3.º Grado</button>
+            <button class="grado-tab-btn active" data-grado="4" role="tab">4.º Grado (Foco Dengue)</button>
+            <button class="grado-tab-btn" data-grado="5" role="tab">5.º Grado</button>
+          </div>
+
+          <div id="gradoPanelContent" class="info-card card-nasa" aria-live="polite">
+            <h3>4.º Grado — Comparar materiales con registros &amp; Teatro Epidemiológico</h3>
+            <div class="grid-2">
+              <div>
+                <p><strong>Áreas Integradas (STEM+A):</strong> Ciencias Naturales, Matemáticas, Tecnología e Ingeniería, Artes y Castellano.</p>
+                <p><strong>Saber / Principio PEA:</strong> Trabajo cooperativo en Tonga, prevención comunitaria, filosofía Ubuntu y saberes familiares del agua.</p>
+              </div>
+              <div>
+                <p><strong>Red Cerebral DUA Dominante:</strong> Integración completa de Redes Afectivas, de Reconocimiento y Estratégicas.</p>
+                <p><strong>Pautas DUA Aplicadas:</strong> Pautas 1.3, 4.1, 5.1 y 8.3 (Flexibilidad en representación, prototipado de cubiertas/trampas y copla/canción).</p>
+              </div>
+            </div>
+            <p style="margin-bottom:0;"><strong>Propósito Curricular Sintético:</strong> Dramatizar la transmisión del dengue, comparar el avance de humedad en papel ($\bar{x}=4.5\text{ cm}$), tela ($\bar{x}=6.0\text{ cm}$) y plástico PET ($\bar{x}=0\text{ cm}$), calcular la media aritmética, diseñar una cubierta hermética y divulgar recomendaciones junto a las familias.</p>
+          </div>
+        </div>
+
+        <!-- Componente B: Stepper de las 7 Operaciones -->
+        <div class="sim-panel">
+          <h3 style="margin-top:0;"><i class="fa-solid fa-route"></i> B. Ruta Metodológica de 7 Operaciones Curriculares (4.º Grado)</h3>
+          <div class="stepper-bar" id="operacionesStepper">
+            <button class="op-step-btn active" data-op="1">Op. 1: Pregunta</button>
+            <button class="op-step-btn" data-op="2">Op. 2: Mallas DBA/EBC</button>
+            <button class="op-step-btn" data-op="3">Op. 3: Áreas STEM+A</button>
+            <button class="op-step-btn" data-op="4">Op. 4: Vínculo PEA</button>
+            <button class="op-step-btn" data-op="5">Op. 5: Evaluación</button>
+            <button class="op-step-btn" data-op="6">Op. 6: Condiciones DUA</button>
+            <button class="op-step-btn" data-op="7">Op. 7: Ajustes Razonables</button>
+          </div>
+
+          <div id="opStepDetail" class="info-card card-afro" aria-live="polite">
+            <h4>Operación 1: Precisar la pregunta curricular integradora</h4>
+            <p><strong>Aplicación en 4.º Grado:</strong> ¿Cómo podemos explicar a nuestras familias la transmisión del dengue y cómo influyen las propiedades de impermeabilidad y absorción del papel, la tela y el plástico en el diseño de una cubierta o trampa para reducir criaderos en recipientes con agua?</p>
+            <p style="margin-bottom:0;"><strong>Producto / Evidencia Concreta:</strong> Pregunta orientadora visible en el aula, en las guías impresas en macrotipo/Braille y en la apertura del Teatro Epidemiológico.</p>
+          </div>
+        </div>
+
+        <!-- Visualización de Distribución Temporal y Balance STEM+A -->
+        <h3 style="margin-top: 1.5rem;"><i class="fa-solid fa-chart-column"></i> Balance de Intensidad Pedagógica por Sesión (240 Minutos de Aula + Diálogo en Casa)</h3>
+        <div class="canvas-wrapper" style="position: relative; height: 280px; max-width: 680px; margin: 0 auto; width: 100%;">
+          <canvas id="chartPanoramaLanding"></canvas>
+        </div>
+      </section>
+
+      <!-- 05. ARQUITECTURA DE LOS 3 MÓDULOS INTERACTIVOS Y CONVENCIONES DUA -->
+      <section class="content-section" id="diagnostico">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <h2>Módulos Interactivos de la Secuencia Didáctica (Subpáginas con Juegos y Simuladores)</h2>
+        </div>
+
+        <p>
+          La intervención se desarrolla en <strong>tres sesiones articuladas (4 horas de aula + trabajo con las familias)</strong>. Cada sesión cuenta con su propia subpágina modular equipada con juegos interactivos, simuladores matemáticos y guías PDF descargables:
+        </p>
+
+        <div class="grid-3">
+          <!-- Tarjeta Módulo 1 -->
+          <article class="info-card card-nasa">
+            <span class="badge-stage" style="background:var(--nasa-crimson); color:#fff;">SESIÓN 1 · 60 MIN</span>
+            <h3 style="margin-top:0.6rem;">Módulo 01: Teatro Epidemiológico y Saberes</h3>
+            <p style="font-size:0.9rem;">
+              Dramatización en Tonga de las 3 escenas (<em>El Criadero, La Picadura y la Familia Preventiva</em>), juego de secuenciación escénica y simulador epidemiológico del vector <em>Aedes aegypti</em>.
+            </p>
+            <a href="modulo01_teatro_epidemiologico.html" class="btn-primary" style="width:100%; justify-content:center;">
+              <i class="fa-solid fa-gamepad"></i> Abrir Módulo 01 y Juegos
+            </a>
+          </article>
+
+          <!-- Tarjeta Módulo 2 -->
+          <article class="info-card card-river">
+            <span class="badge-stage" style="background:var(--afro-river); color:#fff;">SESIÓN 2 · 120 MIN</span>
+            <h3 style="margin-top:0.6rem;">Módulo 02: Laboratorio de Materiales y Cubiertas</h3>
+            <p style="font-size:0.9rem;">
+              Simulador en vivo de capilaridad en tiras de $2 \times 10\text{ cm}$ (Papel, Tela y Plástico PET), hoja de registro con cálculo automático de promedios ($\bar{x}$) y constructor de cubiertas/trampas.
+            </p>
+            <a href="modulo02_laboratorio_materiales.html" class="btn-secondary" style="width:100%; justify-content:center;">
+              <i class="fa-solid fa-flask"></i> Abrir Módulo 02 y Simulador
+            </a>
+          </article>
+
+          <!-- Tarjeta Módulo 3 -->
+          <article class="info-card card-cafe">
+            <span class="badge-stage" style="background:var(--nasa-emerald); color:#fff;">SESIÓN 3 · 60 MIN</span>
+            <h3 style="margin-top:0.6rem;">Módulo 03: Divulgación Multimodal y Evaluación DUA</h3>
+            <p style="font-size:0.9rem;">
+              Estudio creativo de los 5 canales DUA (Coplas con caja de ritmos afro-andina, TikToker, Infografía, Reportaje y Feria) + Calculadora de Rúbrica Formativa de 6 criterios.
+            </p>
+            <a href="modulo03_divulgacion_evaluacion.html" class="btn-download" style="width:100%; justify-content:center;">
+              <i class="fa-solid fa-music"></i> Abrir Módulo 03 y Rúbrica
+            </a>
+          </article>
+        </div>
+
+        <h3 style="margin-top:1.5rem;"><i class="fa-solid fa-palette"></i> Código de Colores DUA de la Matriz Excel (Hoja <code>TOC_y_Sintesis</code>)</h3>
+        <div class="table-responsive">
+          <table class="stem-table">
+            <thead>
+              <tr>
+                <th>Convención Visual DUA</th>
+                <th>Significado en la Planeación y Simuladores</th>
+                <th>Aplicación Práctica en el Aula y en la Web</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="dua-cell-input"><strong>Azul Claro (Entrada)</strong></td>
+                <td>Campos editables / Insumos iniciales</td>
+                <td>Mediciones en $\text{cm}$ ingresadas por el Registrador de la Tonga o variables de los simuladores.</td>
+              </tr>
+              <tr>
+                <td class="dua-cell-formula"><strong>Verde Claro (Fórmula)</strong></td>
+                <td>Campos calculados automáticamente</td>
+                <td>Medias aritméticas ($\bar{x}$), promedios generales y eficacia del sellado de la cubierta.</td>
+              </tr>
+              <tr>
+                <td><strong>Gris / Pergamino (Zebra)</strong></td>
+                <td>Filas alternas de lectura accesible</td>
+                <td>Facilita el rastreo visual horizontal sin fatiga cognitiva en tablas extensas.</td>
+              </tr>
+              <tr>
+                <td class="dua-cell-attention"><strong>Amarillo Solar (Atención)</strong></td>
+                <td>Principios DUA y Roles de la Tonga</td>
+                <td>Destaca ajustes razonables (Braille, regla táctil, opciones sin carga oral) y trabajo Ubuntu.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 06. FICHA TÉCNICA Y CENTRO DE DESCARGA DE GUÍAS PEDAGÓGICAS PDF -->
+      <section class="content-section" id="cuaderno">
+        <div class="section-header">
+          <span class="section-number">05</span>
+          <h2>Centro de Descarga de Guías Pedagógicas PDF y Fuentes Maestras</h2>
+        </div>
+
+        <p>
+          Todos los materiales didácticos cuentan con <strong>trazabilidad física 1:1</strong> para trabajo desconectado en zonas rurales de Guachené, La Unión del Salado, resguardos Nasa y veredas cafeteras:
+        </p>
+
+        <div class="grid-2">
+          <div class="info-card card-nasa">
+            <h3><i class="fa-solid fa-file-pdf" style="color:var(--nasa-crimson);"></i> Guía 01: Teatro Epidemiológico en Tonga</h3>
+            <p style="font-size:0.88rem;">Guion didáctico de las 3 escenas, tarjetas de roles accesibles DUA y formato para recoger el saber familiar del agua en casa.</p>
+            <a href="assets/guias/Guia_01_Teatro_Epidemiologico_Tonga.pdf" download class="btn-primary">
+              <i class="fa-solid fa-download"></i> Descargar Guía 01 (PDF)
+            </a>
+          </div>
+
+          <div class="info-card card-river">
+            <h3><i class="fa-solid fa-file-pdf" style="color:var(--afro-river);"></i> Guía 02: Protocolo de Laboratorio y Cubiertas</h3>
+            <p style="font-size:0.88rem;">Plantilla de registro de las $9$ mediciones (Papel, Tela y Plástico PET), cálculo de promedios y ficha de diseño de la cubierta hermética.</p>
+            <a href="assets/guias/Guia_02_Protocolo_Laboratorio_Materiales.pdf" download class="btn-secondary">
+              <i class="fa-solid fa-download"></i> Descargar Guía 02 (PDF)
+            </a>
+          </div>
+
+          <div class="info-card card-afro">
+            <h3><i class="fa-solid fa-file-pdf" style="color:var(--afro-gold);"></i> Guía 03: Divulgación Familiar y Coplas</h3>
+            <p style="font-size:0.88rem;">Plantillas para los 5 canales multimodales DUA (Copla/Jingle, TikToker, Infografía, Reportaje y Feria) y registro del comentario familiar.</p>
+            <a href="assets/guias/Guia_03_Divulgacion_Familiar_y_Coplas.pdf" download class="btn-primary">
+              <i class="fa-solid fa-download"></i> Descargar Guía 03 (PDF)
+            </a>
+          </div>
+
+          <div class="info-card card-cafe">
+            <h3><i class="fa-solid fa-file-pdf" style="color:var(--nasa-emerald);"></i> Guía 04: Rúbrica Formativa DUA y 7 Operaciones</h3>
+            <p style="font-size:0.88rem;">Manual para el docente con la Ruta de 7 Operaciones STEMA-PEA, los 6 criterios de evaluación en 3 niveles y lista de chequeo DUA.</p>
+            <a href="assets/guias/Guia_04_Rubrica_Formativa_DUA_Docente.pdf" download class="btn-download">
+              <i class="fa-solid fa-download"></i> Descargar Guía 04 (PDF)
+            </a>
+          </div>
+        </div>
+
+        <div class="dua-callout" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; margin-top:1.2rem;">
+          <div>
+            <strong><i class="fa-solid fa-box-archive"></i> Documentos Institucionales Originales (`fuentes/`):</strong><br>
+            Descarga el documento académico completo de la Maestría STEM y el libro de Excel con las 6 hojas formuladas.
+          </div>
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <a href="fuentes/Estrategia DUA -Maestría Stem.pdf" download class="btn-primary">
+              <i class="fa-solid fa-file-pdf"></i> Estrategia Maestría STEM (PDF)
+            </a>
+            <a href="fuentes/prototipo de planeación UDL + PROYECTO Transversal Ciencias Naturales.xlsx" download class="btn-download">
+              <i class="fa-solid fa-file-excel"></i> Prototipo Planeación UDL (XLSX)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07. SÍNTESIS Y PREGUNTAS DE EVALUACIÓN CRÍTICA -->
+      <section class="content-section" id="evaluacion">
+        <div class="section-header">
+          <span class="section-number">06</span>
+          <h2>Síntesis Estratégica y Referentes Normativos</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-check-double" style="color:var(--nasa-emerald);"></i> Contribuciones al Territorio</h3>
+            <ul>
+              <li>Vincula el aprendizaje científico escolar con el manejo real del agua en los hogares de Guachené y el norte del Cauca.</li>
+              <li>Integra a las familias en dos momentos clave: al compartir sus saberes tradicionales y al retroalimentar el mensaje preventivo de la Tonga.</li>
+              <li>Garantiza que el uso de apoyos de accesibilidad (Braille, regla táctil, narración oral) <strong>jamás disminuya la valoración del desempeño</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3><i class="fa-solid fa-scale-balanced" style="color:var(--nasa-crimson);"></i> Referentes Bibliográficos Clave</h3>
+            <ul style="font-size:0.88rem;">
+              <li><strong>CAST (2024):</strong> <em>Universal Design for Learning Guidelines (v3.0)</em>.</li>
+              <li><strong>IE Técnico San Jacinto (2025):</strong> <em>Proyecto Etnoeducativo Afrocaucano (PEA)</em>.</li>
+              <li><strong>Organización Mundial de la Salud (2024):</strong> <em>Dengue y dengue grave</em>.</li>
+              <li><strong>Decreto 804 de 1995:</strong> Atención educativa para grupos étnicos en Colombia.</li>
+              <li><strong>Gómez, Tovar &amp; Chitiva (2026):</strong> <em>Sonidos de mi territorio: luthería escolar STEAM</em> (USTA).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          <strong>Universidad Santo Tomás · Maestría en Educación STEM para el Desarrollo Social (Noviembre 2026)</strong><br>
+          Institución Educativa Técnico San Jacinto (Guachené, Cauca) · Identidad Intercultural: Pueblo Indígena Nasa · Cultura Afro de La Unión del Salado y Guachené · Cultura Cafetera
+        </p>
+      </footer>
+
+    </main>
+  </div>
+
+</body>
+</html>

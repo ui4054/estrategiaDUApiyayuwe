@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="100%" height="100%">
+  <rect width="760" height="300" rx="16" fill="#1e1614" stroke="#8d5a2b" stroke-width="1.5"/>
+  <text x="380" y="32" text-anchor="middle" fill="#fef3c7" font-family="Outfit, sans-serif" font-size="16" font-weight="bold">DISEÑO EXPERIMENTAL ESTANDARIZADO: TIRAS DE 2 × 10 CM (INMERSIÓN DE 1 CM)</text>
+  <g transform="translate(80, 55)">
+    <rect x="20" y="110" width="120" height="100" rx="8" fill="rgba(2,132,199,0.22)" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="22" y="145" width="116" height="63" fill="rgba(14,165,233,0.45)"/>
+    <rect x="65" y="25" width="30" height="140" fill="#e7e5e4" stroke="#a8a29e" stroke-width="1.5"/>
+    <rect x="65" y="95" width="30" height="70" fill="#38bdf8" opacity="0.75"/>
+    <text x="80" y="18" text-anchor="middle" fill="#fde68a" font-family="Outfit, sans-serif" font-size="14" font-weight="bold">1. PAPEL</text>
+    <text x="80" y="230" text-anchor="middle" fill="#bae6fd" font-family="Inter, sans-serif" font-size="12">Media: 4.5 cm (Permeable)</text>
+  </g>
+  <g transform="translate(300, 55)">
+    <rect x="20" y="110" width="120" height="100" rx="8" fill="rgba(2,132,199,0.22)" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="22" y="145" width="116" height="63" fill="rgba(14,165,233,0.45)"/>
+    <rect x="65" y="25" width="30" height="140" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <rect x="65" y="72" width="30" height="93" fill="#0284c7" opacity="0.82"/>
+    <text x="80" y="18" text-anchor="middle" fill="#fde68a" font-family="Outfit, sans-serif" font-size="14" font-weight="bold">2. TELA ALGODÓN</text>
+    <text x="80" y="230" text-anchor="middle" fill="#bae6fd" font-family="Inter, sans-serif" font-size="12">Media: 6.0 cm (Muy Absorbente)</text>
+  </g>
+  <g transform="translate(520, 55)">
+    <rect x="20" y="110" width="120" height="100" rx="8" fill="rgba(2,132,199,0.22)" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="22" y="145" width="116" height="63" fill="rgba(14,165,233,0.45)"/>
+    <rect x="65" y="25" width="30" height="140" fill="rgba(220,252,231,0.35)" stroke="#22c55e" stroke-width="2"/>
+    <line x1="55" y1="145" x2="105" y2="145" stroke="#ef4444" stroke-width="2.5"/>
+    <text x="80" y="18" text-anchor="middle" fill="#86efac" font-family="Outfit, sans-serif" font-size="14" font-weight="bold">3. PLÁSTICO PET</text>
+    <text x="80" y="230" text-anchor="middle" fill="#86efac" font-family="Inter, sans-serif" font-size="12">Media: 0.0 cm (Impermeable)</text>
+  </g>
+</svg>
